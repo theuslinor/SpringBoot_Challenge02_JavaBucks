@@ -3,6 +3,7 @@ package com.compassuol.sp.challenge.msorders.dto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
@@ -10,14 +11,12 @@ import lombok.*;
 @Getter
 @Setter
 public class ProductDTO {
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
     private String name;
 
-    @NotBlank
+    @NotNull
     @Min(0)
     private Double value;
 
