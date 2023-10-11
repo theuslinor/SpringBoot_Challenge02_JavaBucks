@@ -1,8 +1,11 @@
 package com.compassuol.sp.challenge.msorders.entity;
 
+import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
+import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +28,7 @@ public class Product {
     @Column(unique = true)
     private String name;
 
-    @NotBlank
+    @NotNull
     @Min(0)
     private Double value;
 
