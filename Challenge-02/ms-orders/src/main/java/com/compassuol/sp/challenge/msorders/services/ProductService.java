@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class ProductService {
     private final ProductRepository productRepository;
     public void delete(Long id){
+        productRepository.deleteById(id);
 
     }
 

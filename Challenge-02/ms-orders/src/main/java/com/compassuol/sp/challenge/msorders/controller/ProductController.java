@@ -18,6 +18,6 @@ public class ProductController {
     @RequestMapping(value ="/{id}",
         method = RequestMethod.DELETE)
     public void delete (@PathVariable("id") Long id){
-        delete(id);
+        productService.delete(id);
     }
 }
