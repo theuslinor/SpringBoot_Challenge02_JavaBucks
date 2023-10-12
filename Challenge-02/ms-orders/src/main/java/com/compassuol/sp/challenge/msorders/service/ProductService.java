@@ -38,4 +38,9 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public Product createProduct(ProductDTO productDTO){
+        Product product = productMapper.createProduct(productDTO);
+        return productRepository.save(product);
+    }
+
 }
