@@ -32,4 +32,10 @@ public class ProductService {
         return productDTOList;
     }
 
+    public Product updateProduct(Long id, ProductDTO productDTO){
+        Product product = productMapper.createProduct(productDTO);
+        product.setId(id);
+        return productRepository.save(product);
+    }
+
 }
