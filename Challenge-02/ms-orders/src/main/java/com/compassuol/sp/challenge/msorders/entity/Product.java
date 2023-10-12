@@ -1,7 +1,5 @@
 package com.compassuol.sp.challenge.msorders.entity;
 
-import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
-import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

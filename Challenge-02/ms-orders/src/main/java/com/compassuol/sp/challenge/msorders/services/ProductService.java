@@ -3,6 +3,7 @@ package com.compassuol.sp.challenge.msorders.services;
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
+import com.compassuol.sp.challenge.msorders.services.mapper.ProductMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +11,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
+    private final ProductMapper productMapper;
 
     public Product updateProduct(Long id, ProductDTO productDTO) {
-        Product product = productRepository.findById(id).get();
-        product.setName(productDTO.getName());
-        product.setDescription(productDTO.getDescription());
-        product.setValue(productDTO.getValue());
+        Product product = productMapper.createProduct(productDTO);
+        product.setId(id);
         return productRepository.save(product);
     }
-
 }
+
+
