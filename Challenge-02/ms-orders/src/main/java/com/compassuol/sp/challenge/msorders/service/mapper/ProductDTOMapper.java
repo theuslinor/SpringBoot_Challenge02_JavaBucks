@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.services.mapper;
+package com.compassuol.sp.challenge.msorders.service.mapper;
 
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;

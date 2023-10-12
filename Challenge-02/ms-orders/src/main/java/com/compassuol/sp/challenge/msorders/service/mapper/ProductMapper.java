@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.services.mapper;
+package com.compassuol.sp.challenge.msorders.service.mapper;
 
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;
@@ -16,13 +16,4 @@ public class ProductMapper {
 
         return productCreate;
     }
-
-    public ProductDTO map(Product product) {
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setId(product.getId());
-        productDTO.setName(product.getName());
-        productDTO.setDescription(product.getDescription());
-        return productDTO;
-    }
-
 }
