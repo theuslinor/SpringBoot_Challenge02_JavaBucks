@@ -1,5 +1,6 @@
 INSERT INTO products_tb (id, name, value, description)
 VALUES
+
  (1, 'The Witcher 3: Wild Hunt', 29.98, 'Embarque em uma épica jornada de caça a monstros. Escolhas impactam o destino neste RPG imersivo.'),
  (2, 'Overwatch 2', 0, 'Batalhas frenéticas entre heróis em equipes. Estratégia e habilidade se unem neste shooter colorido.'),
  (3, 'Stardew Valley', 39.99, 'Cultive sua fazenda, pesque e forje amizades na pacata Pelican Town. Uma experiência relaxante.'),
