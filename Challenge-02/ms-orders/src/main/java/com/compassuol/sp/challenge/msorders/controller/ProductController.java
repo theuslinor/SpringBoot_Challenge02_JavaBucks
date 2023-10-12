@@ -20,4 +20,10 @@ public class ProductController {
     public void delete (@PathVariable("id") Long id){
         productService.delete(id);
     }
+
+    @RequestMapping(value ="/{id}",
+            method = RequestMethod.DELETE)
+    public void delete (@PathVariable("id") Long id){
+        productService.delete(id);
+    }
 }
