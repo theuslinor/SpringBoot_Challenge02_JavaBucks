@@ -27,7 +27,6 @@ public class Product {
     private String name;
 
     @NotNull
-    @Column(nullable = false)
     @Min(0)
     private Double value;
 

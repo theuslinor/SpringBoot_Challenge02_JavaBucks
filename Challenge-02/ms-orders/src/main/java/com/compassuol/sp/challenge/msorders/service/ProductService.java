@@ -25,11 +25,11 @@ public class ProductService {
         List<ProductDTO> productDTOList = new ArrayList<>();
 
         for (Product product : productList) {
-            ProductDTO productDTO = productMapper.map(product);
+            ProductDTO productDTO = productDTOMapper.createProductDTO(product);
             productDTOList.add(productDTO);
         }
 
         return productDTOList;
-
     }
+
 }
