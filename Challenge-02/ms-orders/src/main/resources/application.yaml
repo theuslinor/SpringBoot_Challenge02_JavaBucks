@@ -10,4 +10,7 @@ spring.jpa.defer-datasource-initialization=true
 spring.jpa.generate-ddl=true
 spring.jpa.show-sql=true
 
+springdoc.openapi.enabled: true
+springdoc.swagger-ui.enabled: true
+
 spring.sql.init.mode=always
