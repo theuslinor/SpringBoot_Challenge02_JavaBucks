@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -31,6 +32,12 @@ public class ProductService {
 
         return productDTOList;
     }
+    //Lógica de buscar pelo Id
+    public Product getProductsById(Long id) {
+        Optional<Product> product= productRepository.findById(id);
+        return product.get();
+    }
+
 
     public Product updateProduct(Long id, ProductDTO productDTO){
         Product product = productMapper.createProduct(productDTO);

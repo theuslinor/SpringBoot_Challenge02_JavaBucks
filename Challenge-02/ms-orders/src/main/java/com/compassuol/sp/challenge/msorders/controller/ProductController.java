@@ -2,11 +2,9 @@ package com.compassuol.sp.challenge.msorders.controller;
 
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;
-import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.compassuol.sp.challenge.msorders.service.ProductService;
@@ -29,7 +27,12 @@ public class ProductController {
         return ResponseEntity.ok(products);
 
     }
-
+    //Lógica para pegar pelo id
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> getById(@PathVariable Long id) {
+       Product product= productService.getProductsById(id);
+       return ResponseEntity.ok().body(product);
+    }
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
         productService.updateProduct(id, productDTO);
