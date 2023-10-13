@@ -2,15 +2,13 @@ package com.compassuol.sp.challenge.msorders.controller;
 
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.compassuol.sp.challenge.msorders.service.ProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 
@@ -27,12 +25,14 @@ public class ProductController {
         return ResponseEntity.ok(products);
 
     }
+
     //Lógica para pegar pelo id
     @GetMapping("/{id}")
     public ResponseEntity<Product> getById(@PathVariable Long id) {
        Product product= productService.getProductsById(id);
        return ResponseEntity.ok().body(product);
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
         productService.updateProduct(id, productDTO);
@@ -45,5 +45,12 @@ public class ProductController {
         productService.createProduct(productDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(productDTO);
     }
+
+    @RequestMapping(value ="/{id}",
+            method = RequestMethod.DELETE)
+    public void delete (@PathVariable("id") Long id){
+        productService.delete(id);
+    }
+
 }
 

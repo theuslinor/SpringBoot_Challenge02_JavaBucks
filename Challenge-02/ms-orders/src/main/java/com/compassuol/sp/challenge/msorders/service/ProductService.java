@@ -1,9 +1,10 @@
 package com.compassuol.sp.challenge.msorders.service;
+
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
-import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -32,12 +33,12 @@ public class ProductService {
 
         return productDTOList;
     }
+
     //Lógica de buscar pelo Id
     public Product getProductsById(Long id) {
         Optional<Product> product= productRepository.findById(id);
         return product.get();
     }
-
 
     public Product updateProduct(Long id, ProductDTO productDTO){
         Product product = productMapper.createProduct(productDTO);
@@ -48,6 +49,10 @@ public class ProductService {
     public Product createProduct(ProductDTO productDTO){
         Product product = productMapper.createProduct(productDTO);
         return productRepository.save(product);
+    }
+
+    public void delete(Long id) {
+        productRepository.deleteById(id);
     }
 
 }
