@@ -34,10 +34,11 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
+    public ResponseEntity<String> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
         productService.updateProduct(id, productDTO);
-        // Rever a parte do NO_CONTENT e propor melhoria
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+
+        String responseMessage = "Product updated successfully";
+        return ResponseEntity.ok(responseMessage);   
     }
 
     @PostMapping
