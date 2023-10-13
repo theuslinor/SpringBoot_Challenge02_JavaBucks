@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69f0b479-e7d4-4ec6-9080-ab3ba80c6406" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Challenge-02/ms-orders/src/test/java/com/compassuol/sp/challenge/msorders/common/ProductConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Challenge-02/ms-orders/src/test/java/com/compassuol/sp/challenge/msorders/web/PlaneteControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Challenge-02/ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/Challenge-02/ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Challenge-02/ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Challenge-02/ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Challenge-02/ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Challenge-02/ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Challenge-02/ms-orders/src/test/java/com/compassuol/sp/challenge/msorders/service/ProductServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Challenge-02/ms-orders/src/test/java/com/compassuol/sp/challenge/msorders/service/ProductServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +44,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "putProduct",
-    "last_opened_file_path": "C:/Users/User/Desktop/Compass/week-8(challenge)/1-Att/SpringBoot_Challenge02_JavaBucks",
+    "last_opened_file_path": "C:/Users/User/Desktop/Compass/week-6/Testes automatizados na pratica com Spring Boot/StarWars",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

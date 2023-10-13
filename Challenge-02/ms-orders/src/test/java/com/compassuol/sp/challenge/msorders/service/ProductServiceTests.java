@@ -1,6 +1,7 @@
 package com.compassuol.sp.challenge.msorders.service;
 
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
+import com.compassuol.sp.challenge.msorders.entity.Product;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -34,6 +36,20 @@ public class ProductServiceTests {
         when(productService.getAll()).thenReturn(Collections.emptyList());
         List<ProductDTO> result = productService.getAll();
         assertThat(result).isEmpty();
+    }
+
+    @Test
+    public void createProduct_WithValidData_ReturnsPlanet(){
+        //AAA
+        //Arrange
+        when(productRepository.save(PRODUCT)).thenReturn(PRODUCT);
+
+        //system under test (sut) - convenção
+        //Act - action
+        Product sut = productService.createProduct(PRODUCT);
+
+        //Assert - aferir
+        assertThat(sut).isEqualTo(PRODUCT);
     }
 
 }
