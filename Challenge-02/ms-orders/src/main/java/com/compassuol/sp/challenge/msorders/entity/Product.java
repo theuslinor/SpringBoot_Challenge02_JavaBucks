@@ -34,4 +34,10 @@ public class Product {
     @Size(min = 10, message = "The field must have at least 10 characters")
     private String description;
 
+    public Product(String name, Double value, String description) {
+        this.name = name;
+        this.value = value;
+        this.description = description;
+    }
+
 }
