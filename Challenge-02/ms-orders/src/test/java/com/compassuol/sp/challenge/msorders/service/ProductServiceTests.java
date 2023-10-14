@@ -13,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCTDTO;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,6 +39,28 @@ public class ProductServiceTests {
         when(productService.getAll()).thenReturn(Collections.emptyList());
         List<ProductDTO> result = productService.getAll();
         assertThat(result).isEmpty();
+    }
+//Teste do método de getId
+
+    @Test
+    public void ProductsGetById_ReturnsProduct() {
+
+        Product simulatedProduct = new Product();
+        simulatedProduct.setId(1L);
+        simulatedProduct.setName("Test Product");
+        simulatedProduct.setPrice(10.0);
+        simulatedProduct.setDescription("Description");
+
+
+        when(productRepository.findById(1L)).thenReturn(Optional.of(simulatedProduct));
+        Product result = productService.getProductsById(1L);
+        assertThat(result).isNotNull();
+
+        // Verifique se os campos do resultado correspondem aos campos do produto simulado
+        assertThat(result.getId()).isEqualTo(simulatedProduct.getId());
+        assertThat(result.getName()).isEqualTo(simulatedProduct.getName());
+        assertThat(result.getPrice()).isEqualTo(simulatedProduct.getPrice());
+        assertThat(result.getDescription()).isEqualTo(simulatedProduct.getDescription());
     }
 
     @Test

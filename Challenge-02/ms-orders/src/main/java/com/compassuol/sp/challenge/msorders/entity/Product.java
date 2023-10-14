@@ -40,4 +40,10 @@ public class Product {
         this.description = description;
     }
 
+    public void setPrice(double v) {
+    }
+
+    public boolean getPrice() {
+        return false;
+    }
 }
