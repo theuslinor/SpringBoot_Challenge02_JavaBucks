@@ -29,16 +29,19 @@ public class ProductController {
     //Lógica para pegar pelo id
     @GetMapping("/{id}")
     public ResponseEntity<Product> getById(@PathVariable Long id) {
-       Product product= productService.getProductsById(id);
-       return ResponseEntity.ok().body(product);
+        Product product= productService.getProductsById(id);
+        return ResponseEntity.ok().body(product);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<String> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
+        Product existingProduct = productService.getProductsById(productDTO.getId());
+        if (existingProduct == null){
+            return ResponseEntity.notFound().build();
+        }
         productService.updateProduct(id, productDTO);
+        return ResponseEntity.ok().build();
 
-        String responseMessage = "Product updated successfully";
-        return ResponseEntity.ok(responseMessage);   
     }
 
     @PostMapping
