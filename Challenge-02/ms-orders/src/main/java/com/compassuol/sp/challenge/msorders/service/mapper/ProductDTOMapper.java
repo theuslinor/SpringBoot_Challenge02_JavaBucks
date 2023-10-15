@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductDTOMapper {
     public ProductDTO createProductDTO(Product product) {
-        var productCreate = new ProductDTO();
+        var productDTOCreate = new ProductDTO();
 
-        productCreate.setId(product.getId());
-        productCreate.setName(product.getName());
-        productCreate.setValue(product.getValue());
-        productCreate.setDescription(product.getDescription());
+        productDTOCreate.setId(product.getId());
+        productDTOCreate.setName(product.getName());
+        productDTOCreate.setValue(product.getValue());
+        productDTOCreate.setDescription(product.getDescription());
 
-        return productCreate;
+        return productDTOCreate;
     }
 }

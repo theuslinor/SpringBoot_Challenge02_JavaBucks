@@ -11,6 +11,8 @@ public enum ErrorCode {
 
     BAD_REQUEST("Invalid Data"),
 
+    CONFLICT("Conflict between the fields"),
+
     SYSTEM_ERROR("Unavailable Server");
 
     private final String message;
