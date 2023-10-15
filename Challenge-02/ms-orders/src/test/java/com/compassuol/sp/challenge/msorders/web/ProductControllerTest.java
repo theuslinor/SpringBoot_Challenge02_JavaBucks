@@ -47,7 +47,7 @@ public class ProductControllerTest {
         mockMvc.perform(post("/products").content(objectMapper.writeValueAsString(PRODUCTDTO))
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isCreated());
-        //.andExpect(jsonPath("$").value(PRODUCTDTO));
+        //.andExpect(jsonPath("$").value(PRODUCTDTO));add
 
     }
 
