@@ -47,23 +47,22 @@ public class ProductServiceTests {
 
         Product simulatedProduct = new Product();
         simulatedProduct.setId(1L);
-        simulatedProduct.setName("Test Product");
-        simulatedProduct.setPrice(10.0);
-        simulatedProduct.setDescription("Description");
+       simulatedProduct.setName("Test Product");
+       simulatedProduct.setPrice(10.0);
+       simulatedProduct.setDescription("Description");
 
 
-        when(productRepository.findById(1L)).thenReturn(Optional.of(simulatedProduct));
-        Product result = productService.getProductsById(1L);
+     when(productRepository.findById(1L)).thenReturn(Optional.of(simulatedProduct));
+        ProductDTO result = productService.getProductsById(1L);
         assertThat(result).isNotNull();
-
         // Verifique se os campos do resultado correspondem aos campos do produto simulado
-        assertThat(result.getId()).isEqualTo(simulatedProduct.getId());
-        assertThat(result.getName()).isEqualTo(simulatedProduct.getName());
-        assertThat(result.getPrice()).isEqualTo(simulatedProduct.getPrice());
-        assertThat(result.getDescription()).isEqualTo(simulatedProduct.getDescription());
+         assertThat(result.getId()).isEqualTo(simulatedProduct.getId());
+         assertThat(result.getName()).isEqualTo(simulatedProduct.getName());
+         assertThat(result.getPrice()).isEqualTo(simulatedProduct.getPrice());
+         assertThat(result.getDescription()).isEqualTo(simulatedProduct.getDescription());
     }
 
-    @Test
+   @Test
     public void createProduct_WithValidData_ReturnsProduct() {
 //        when(productRepository.save(PRODUCT)).thenReturn(PRODUCT);
 //

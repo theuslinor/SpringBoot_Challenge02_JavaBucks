@@ -28,9 +28,9 @@ public class ProductController {
 
     //Lógica para pegar pelo id
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getById(@PathVariable Long id) {
-       Product product= productService.getProductsById(id);
-       return ResponseEntity.ok().body(product);
+    public ResponseEntity<ProductDTO> getById(@PathVariable Long id) {
+       ProductDTO productDTO= productService.getProductsById(id);
+       return ResponseEntity.ok().body(productDTO);
     }
 
     @PutMapping("/{id}")
