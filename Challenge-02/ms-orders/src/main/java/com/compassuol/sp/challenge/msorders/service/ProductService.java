@@ -38,7 +38,7 @@ public class ProductService {
     public ProductDTO getProductsById(Long id) {
         Product product= productRepository.findById(id).orElse(null);
         if (product != null) {
-            return productDTOMapper.createProductDTO(product); // Use o mapeador se necessário
+            return productDTOMapper.createProductDTO(product);
         } else {
             return null;
         }
