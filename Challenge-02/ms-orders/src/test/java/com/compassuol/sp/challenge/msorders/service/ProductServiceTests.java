@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCT;
+import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCTDTO;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -50,10 +51,6 @@ public class ProductServiceTests {
         List<ProductDTO> result = productService.getAll();
         assertThat(result).isEmpty();
     }
-//Teste do método de getId
-
-
-
 
    @Test
     public void createProduct_WithValidData_ReturnsProduct() {
