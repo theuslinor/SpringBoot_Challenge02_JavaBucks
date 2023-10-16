@@ -6,6 +6,7 @@ import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -44,9 +45,12 @@ public class ProductService {
     }
 
     public Product updateProduct(Long id, ProductDTO productDTO){
-        Product product = productMapper.createProduct(productDTO);
-        product.setId(id);
-        return productRepository.save(product);
+        if (productRepository.existsById(id)){
+            Product product = productMapper.createProduct(productDTO);
+            product.setId(id);
+            return productRepository.save(product);
+        }
+        return null;
     }
 
     public ProductDTO createProduct(ProductDTO productRequestDTO){
