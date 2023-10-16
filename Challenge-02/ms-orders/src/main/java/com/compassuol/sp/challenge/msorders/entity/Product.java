@@ -8,13 +8,10 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "products_tb")
-@ToString
-@EqualsAndHashCode
 public class Product {
 
     @Id
