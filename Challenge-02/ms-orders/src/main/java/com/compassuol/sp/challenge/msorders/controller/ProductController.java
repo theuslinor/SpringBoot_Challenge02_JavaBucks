@@ -26,7 +26,6 @@ public class ProductController {
 
     }
 
-    //Lógica para pegar pelo id
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> getById(@PathVariable Long id) {
        ProductDTO productDTO= productService.getProductsById(id);
@@ -34,10 +33,9 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
+    public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
         productService.updateProduct(id, productDTO);
-        // Rever a parte do NO_CONTENT e propor melhoria
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping
