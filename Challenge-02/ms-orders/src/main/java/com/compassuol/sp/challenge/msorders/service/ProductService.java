@@ -35,9 +35,13 @@ public class ProductService {
     }
 
     //Lógica de buscar pelo Id
-    public Product getProductsById(Long id) {
-        Optional<Product> product= productRepository.findById(id);
-        return product.get();
+    public ProductDTO getProductsById(Long id) {
+        Product product= productRepository.findById(id).orElse(null);
+        if (product != null) {
+            return productDTOMapper.createProductDTO(product);
+        } else {
+            return null;
+        }
     }
 
     public Product updateProduct(Long id, ProductDTO productDTO){

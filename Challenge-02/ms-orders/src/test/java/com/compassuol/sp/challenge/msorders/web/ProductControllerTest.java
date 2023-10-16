@@ -14,8 +14,10 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCTDTO;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ProductController.class)
@@ -67,6 +69,15 @@ public class ProductControllerTest {
         post("/products").content(objectMapper.writeValueAsString(PRODUCTDTO))
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isConflict());
+    }
+
+    @Test
+    public void updateProductName_WithExistingName_ReturnsConflict() throws Exception {
+        when(productService.updateProduct(anyLong(), any(ProductDTO.class))).thenThrow(DataIntegrityViolationException.class);
+        mockMvc.perform(put("/products/{productId}", 1)
+                        .content(objectMapper.writeValueAsString(PRODUCTDTO))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isConflict());
     }
 
 

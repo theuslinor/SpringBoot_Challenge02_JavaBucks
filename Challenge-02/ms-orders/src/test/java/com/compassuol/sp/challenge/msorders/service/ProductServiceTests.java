@@ -10,14 +10,18 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCT;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class ProductServiceTests {
@@ -39,14 +43,19 @@ public class ProductServiceTests {
         productDTO = new ProductDTO(1L," ",0.0," ");
     }
 
+
     @Test
     public void listProducts_ReturnsNoProducts() {
         when(productService.getAll()).thenReturn(Collections.emptyList());
         List<ProductDTO> result = productService.getAll();
         assertThat(result).isEmpty();
     }
+//Teste do método de getId
 
-    @Test
+
+
+
+   @Test
     public void createProduct_WithValidData_ReturnsProduct() {
         ProductDTO productDTO = productDTOMapper.createProductDTO(PRODUCT);
 
