@@ -164,7 +164,7 @@ paths:
         '200':
           description: OK
 
-        '400':docs: 
+        '400':
           description: Bad Request
 
 components:
