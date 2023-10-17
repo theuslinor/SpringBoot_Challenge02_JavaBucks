@@ -50,10 +50,6 @@ public class ProductServiceTests {
         List<ProductDTO> result = productService.getAll();
         assertThat(result).isEmpty();
     }
-//Teste do método de getId
-
-
-
 
    @Test
     public void createProduct_WithValidData_ReturnsProduct() {

@@ -34,7 +34,6 @@ public class ProductService {
         return productDTOList;
     }
 
-    //Lógica de buscar pelo Id
     public ProductDTO getProductsById(Long id) {
         Product product= productRepository.findById(id).orElse(null);
         if (product != null) {

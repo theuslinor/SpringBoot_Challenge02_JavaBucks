@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductMapper {
     public Product createProduct(ProductDTO productDTO) {
+
         var productCreate = new Product();
 
         productCreate.setId(productDTO.getId());
