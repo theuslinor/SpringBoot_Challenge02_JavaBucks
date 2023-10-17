@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.compassuol.sp.challenge</groupId>
-	<artifactId>ms-orders</artifactId>
+	<artifactId>ms-ordersProduct</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ms-orders</name>
 	<description>Demo project for Spring Boot</description>
@@ -52,10 +52,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.compassuol.sp.challenge</groupId>
-			<artifactId>ms-orders</artifactId>
-		</dependency>
+
 	</dependencies>
 
 	<build>

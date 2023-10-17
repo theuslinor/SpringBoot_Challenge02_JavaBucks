@@ -1,13 +1,13 @@
-package com.compassuol.sp.challenge.msorders.entity;
+package com.compassuol.sp.challenge.msorders.model.entity;
 
-import com.compassuol.sp.challenge.msorders.
-
+import com.compassuol.sp.challenge.msorders.model.product.Product;
+import com.compassuol.sp.challenge.msorders.model.viacep.ViaCep;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import java.time.LocalDateTime;
 
-import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,11 +21,15 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @ManyToOne
-    @JoinColumn("id_product")
+    @JoinColumn(name = "product_id")
     private Product product;
 
-    private String address;
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "address_id")
+    private ViaCep address;
 
     @NotBlank
     private String paymentMethod;
@@ -37,9 +41,7 @@ public class Order {
     private Double discount;
 
     @NotNull
-    private Double totalValue;
-
-    private LocalDate date = LocalDate.now();
+    private LocalDateTime date;
 
     @NotBlank
     private String status;
@@ -49,6 +51,5 @@ public class Order {
 
     @NotBlank
     private String cancelDate;
-
 
 }

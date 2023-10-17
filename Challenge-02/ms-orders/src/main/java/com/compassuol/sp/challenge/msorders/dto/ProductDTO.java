@@ -29,7 +29,4 @@ public class ProductDTO {
     @Size(min = 10, message = "The field must have at least 10 characters")
     private String description;
 
-    public boolean getPrice() {
-        return false;
-    }
 }

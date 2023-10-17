@@ -1,14 +1,15 @@
-package com.compassuol.sp.challenge.msorders.dto;
+package com.compassuol.sp.challenge.msorders.model.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.compassuol.sp.challenge.msorders.model.product.Product;
+import com.compassuol.sp.challenge.msorders.model.viacep.ViaCep;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -17,6 +18,12 @@ import java.time.LocalDate;
 public class OrderDTO {
 
     private Long id;
+
+    @NotNull
+    private Product product;
+
+    @NotNull
+    private ViaCep address;
 
     @NotBlank
     private String paymentMethod;
@@ -27,10 +34,7 @@ public class OrderDTO {
     @NotNull
     private Double discount;
 
-    @NotNull
-    private Double totalValue;
-
-    private LocalDate date;
+    private LocalDateTime date;
 
     @NotBlank
     private String status;
@@ -40,6 +44,5 @@ public class OrderDTO {
 
     @NotBlank
     private String cancelDate;
-
 
 }
