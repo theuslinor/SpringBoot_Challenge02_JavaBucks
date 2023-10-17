@@ -13,7 +13,7 @@ public class OrderMapper {
         var orderDTOCreate = new Order();
 
         orderDTOCreate.setId(orderDTO.getId());
-        orderDTOCreate.setProduct(orderDTO.getProduct());
+        orderDTOCreate.setProductService(orderDTO.getProductService());
         orderDTOCreate.setAddress(orderDTO.getAddress());
         orderDTOCreate.setPaymentMethod(orderDTO.getPaymentMethod());
         orderDTOCreate.setSubtotalValue(orderDTO.getSubtotalValue());
