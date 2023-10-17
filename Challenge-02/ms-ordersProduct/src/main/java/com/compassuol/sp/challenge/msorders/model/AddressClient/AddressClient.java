@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.model.viacep;
+package com.compassuol.sp.challenge.msorders.model.AddressClient;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,22 +9,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity(name = "order_viaCep")
-public class ViaCep {
+public class AddressClient {
     @Id
     @Column(name = "address_id")
     private Long id;
 
     private String cep;
 
-    private String logradouro;
+    private String street;
 
-    private String complemento;
-
-    private String bairro;
-
-    private String localidade;
-
-    private String uf;
-
+    private Long number;
 
 }

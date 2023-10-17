@@ -1,7 +1,7 @@
 package com.compassuol.sp.challenge.msorders.model.entity;
 
-import com.compassuol.sp.challenge.msorders.model.product.Product;
-import com.compassuol.sp.challenge.msorders.model.viacep.ViaCep;
+import com.compassuol.sp.challenge.msorders.model.productService.ProductService;
+import com.compassuol.sp.challenge.msorders.model.AddressClient.AddressClient;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,12 +24,12 @@ public class Order {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product product;
+    private ProductService productService;
 
     @NotNull
     @ManyToOne
     @JoinColumn(name = "address_id")
-    private ViaCep address;
+    private AddressClient address;
 
     @NotBlank
     private String paymentMethod;

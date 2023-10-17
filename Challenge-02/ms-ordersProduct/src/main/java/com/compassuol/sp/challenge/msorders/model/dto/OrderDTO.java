@@ -1,7 +1,7 @@
 package com.compassuol.sp.challenge.msorders.model.dto;
 
-import com.compassuol.sp.challenge.msorders.model.product.Product;
-import com.compassuol.sp.challenge.msorders.model.viacep.ViaCep;
+import com.compassuol.sp.challenge.msorders.model.productService.ProductService;
+import com.compassuol.sp.challenge.msorders.model.AddressClient.AddressClient;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -20,10 +20,10 @@ public class OrderDTO {
     private Long id;
 
     @NotNull
-    private Product product;
+    private ProductService productService;
 
     @NotNull
-    private ViaCep address;
+    private AddressClient address;
 
     @NotBlank
     private String paymentMethod;
