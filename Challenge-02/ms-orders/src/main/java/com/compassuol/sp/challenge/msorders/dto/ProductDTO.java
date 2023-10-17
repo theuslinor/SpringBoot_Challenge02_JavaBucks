@@ -8,11 +8,9 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+@Data
 public class ProductDTO {
     private Long id;
 
