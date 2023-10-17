@@ -1,7 +1,6 @@
 package com.compassuol.sp.challenge.msorders.controller;
 
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
-import com.compassuol.sp.challenge.msorders.entity.Product;
 import com.compassuol.sp.challenge.msorders.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,18 +25,17 @@ public class ProductController {
 
     }
 
-    //Lógica para pegar pelo id
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> getById(@PathVariable Long id) {
+    public ResponseEntity<ProductDTO> getProductsById(@PathVariable Long id) {
        ProductDTO productDTO= productService.getProductsById(id);
        return ResponseEntity.ok().body(productDTO);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
+    public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
         productService.updateProduct(id, productDTO);
-        // Rever a parte do NO_CONTENT e propor melhoria
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping
@@ -46,10 +44,10 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED).body(productResponseDTO);
     }
 
-    @RequestMapping(value ="/{id}",
-            method = RequestMethod.DELETE)
-    public void delete (@PathVariable("id") Long id){
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ProductDTO> deleteProduct(@PathVariable Long id) {
         productService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
