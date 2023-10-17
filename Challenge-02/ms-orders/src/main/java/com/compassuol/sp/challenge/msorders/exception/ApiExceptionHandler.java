@@ -8,6 +8,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.io.IOException;
+
 @ControllerAdvice
 public class ApiExceptionHandler {
 
@@ -35,9 +37,9 @@ public class ApiExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
     }
 
-    @ExceptionHandler(Exception.class)
-    public final ResponseEntity<Object> handlerAllExceptions(){
-        var problem = new Problem(ErrorCode.SYSTEM_ERROR);
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(problem);
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<Object> handleIOException() {
+        var problem = new Problem(ErrorCode.NOT_FOUND, HttpStatus.NOT_FOUND);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
     }
 }

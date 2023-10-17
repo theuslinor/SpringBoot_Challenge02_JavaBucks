@@ -2,7 +2,6 @@ package com.compassuol.sp.challenge.msorders.web;
 
 import com.compassuol.sp.challenge.msorders.controller.ProductController;
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
-import com.compassuol.sp.challenge.msorders.entity.Product;
 import com.compassuol.sp.challenge.msorders.service.ProductService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,9 +22,9 @@ import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODU
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ProductController.class)
@@ -47,8 +46,6 @@ public class ProductControllerTest {
         mockMvc.perform(post("/products").content(objectMapper.writeValueAsString(PRODUCTDTO))
         .contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isCreated());
-        //.andExpect(jsonPath("$").value(PRODUCTDTO));add
-
     }
 
     @Test
@@ -80,6 +77,7 @@ public class ProductControllerTest {
     }
 
     @Test
+
     void getAllProducts_ReturnsListOfProducts() throws Exception {
 
         List<ProductDTO> productDTOList = Arrays.asList(new ProductDTO(1L, "tayday",0.0, "jogo da fazendinha"),
@@ -107,26 +105,14 @@ public class ProductControllerTest {
     }
 
     @Test
-    void getProductById_WithValidId_ReturnsProduct() throws Exception {
-
-        Long productId = 1L;
-        Product product = new Product(productId, "Product 1", 100.0, "Description");
-        when(productService.getProductsById(productId)).thenReturn(product);
-
-
-        MvcResult result = mockMvc.perform(get("/products/{id}", productId))
-        .andExpect(status().isOk())
-        .andReturn();
-
-
-        String responseBody = result.getResponse().getContentAsString();
-        ProductDTO responseProduct = objectMapper.readValue(responseBody, ProductDTO.class);
-
-        assertEquals(productId, responseProduct.getId());
-        assertEquals("Product 1", responseProduct.getName());
-        assertEquals(100.0, responseProduct.getValue());
-        assertEquals("Description", responseProduct.getDescription());
+    public void updateProductName_WithExistingName_ReturnsConflict() throws Exception {
+        when(productService.updateProduct(anyLong(), any(ProductDTO.class))).thenThrow(DataIntegrityViolationException.class);
+        mockMvc.perform(put("/products/{productId}", 1)
+        .content(objectMapper.writeValueAsString(PRODUCTDTO))
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isConflict());
     }
+
 
 
 }
