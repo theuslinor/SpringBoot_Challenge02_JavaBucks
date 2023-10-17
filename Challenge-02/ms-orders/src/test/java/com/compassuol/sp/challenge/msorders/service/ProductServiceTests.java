@@ -7,6 +7,7 @@ import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
 
+import jakarta.validation.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCT;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -61,6 +63,43 @@ public class ProductServiceTests {
        Product product = productMapper.createProduct(productDTO);
 
         assertThat(product).isEqualTo(new Product(400L,"name", 99.0, "description with more 10 caracters"));
+    }
+
+    @Test
+    public void createProduct_WithNullData_ReturnsProduct() {
+        when(productDTOMapper.createProductDTO(any(Product.class)))
+        .thenReturn(null);
+
+        when(productMapper.createProduct(any(ProductDTO.class)))
+        .thenReturn(null);
+
+        ProductDTO productDTO = productDTOMapper.createProductDTO(new Product());
+        Product product = productMapper.createProduct(new ProductDTO());
+
+        assertThat(productDTO).isNull();
+        assertThat(product).isNull();
+    }
+
+    @Test
+    public void createProduct_WithInvalidData_ReturnsDefaultValues() {
+        when(productDTOMapper.createProductDTO(any(Product.class)))
+        .thenReturn(new ProductDTO(null, null, 0.0, ""));
+
+        when(productMapper.createProduct(any(ProductDTO.class)))
+        .thenReturn(new Product(null, null, 0.0, ""));
+
+        ProductDTO productDTO = productDTOMapper.createProductDTO(new Product(400L, "name", 0.0, "one thing"));
+        Product product = productMapper.createProduct(productDTO);
+
+        assertThat(productDTO.getId()).isNull();
+        assertThat(productDTO.getName()).isNull();
+        assertThat(productDTO.getValue()).isEqualTo(0.0);
+        assertThat(productDTO.getDescription()).isEmpty();
+
+        assertThat(product.getId()).isNull();
+        assertThat(product.getName()).isNull();
+        assertThat(product.getValue()).isEqualTo(0.0);
+        assertThat(product.getDescription()).isEmpty();
     }
 
     @Test
