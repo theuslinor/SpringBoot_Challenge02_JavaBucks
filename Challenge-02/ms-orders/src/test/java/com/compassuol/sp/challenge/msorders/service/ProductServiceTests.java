@@ -5,23 +5,18 @@ import com.compassuol.sp.challenge.msorders.entity.Product;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCT;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class ProductServiceTests {
@@ -32,16 +27,12 @@ public class ProductServiceTests {
     @Mock
     ProductRepository productRepository;
 
-    ProductDTO productDTO;
+    ProductService productController;
 
-    ProductMapper productMapper = new ProductMapper();
-
-    ProductDTOMapper productDTOMapper = new ProductDTOMapper();
-
-    @BeforeEach
-    void setUp(){
-        productDTO = new ProductDTO(1L," ",0.0," ");
-    }
+    @Mock
+    ProductMapper productMapper;
+    @Mock
+    ProductDTOMapper productDTOMapper;
 
 
     @Test
@@ -50,9 +41,6 @@ public class ProductServiceTests {
         List<ProductDTO> result = productService.getAll();
         assertThat(result).isEmpty();
     }
-//Teste do método de getId
-
-
 
 
    @Test
