@@ -13,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -50,11 +51,15 @@ public class ProductServiceTests {
 
    @Test
     public void createProduct_WithValidData_ReturnsProduct() {
-        ProductDTO productDTO = productDTOMapper.createProductDTO(new Product(400L,"name", 99.0, "description with more 10 caracters"));
+       when(productDTOMapper.createProductDTO(any(Product.class)))
+       .thenReturn(new ProductDTO(400L,"name", 99.0, "description with more 10 caracters"));
 
-        Product product = productMapper.createProduct(productDTO);
+       when(productMapper.createProduct(any(ProductDTO.class)))
+       .thenReturn(new Product(400L,"name", 99.0, "description with more 10 caracters"));
 
-       //Product product = new Product(400L,"name", 99.0, "description with more 10 caracters");
+       ProductDTO productDTO = productDTOMapper.createProductDTO(new Product(400L, "name", 99.0, "description with more 10 characters"));
+       Product product = productMapper.createProduct(productDTO);
+
         assertThat(product).isEqualTo(new Product(400L,"name", 99.0, "description with more 10 caracters"));
     }
 
