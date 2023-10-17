@@ -20,6 +20,7 @@ import java.util.List;
 
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCT;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -31,17 +32,12 @@ public class ProductServiceTests {
 
     @Mock
      ProductRepository productRepository;
-  
-    @Mock
-    ProductMapper productMapper;
-  
-    @Mock
-    ProductDTOMapper productDTOMapper;
-  
+
     @Mock
     ProductMapper productMapper;
 
-    ProductController productController;
+    @Mock
+    ProductDTOMapper productDTOMapper;
 
 
     @Test
@@ -54,11 +50,12 @@ public class ProductServiceTests {
 
    @Test
     public void createProduct_WithValidData_ReturnsProduct() {
-        ProductDTO productDTO = productDTOMapper.createProductDTO(PRODUCT);
+        ProductDTO productDTO = productDTOMapper.createProductDTO(new Product(400L,"name", 99.0, "description with more 10 caracters"));
 
         Product product = productMapper.createProduct(productDTO);
 
-        assertThat(product).isEqualTo(PRODUCT);
+       //Product product = new Product(400L,"name", 99.0, "description with more 10 caracters");
+        assertThat(product).isEqualTo(new Product(400L,"name", 99.0, "description with more 10 caracters"));
     }
 
     @Test

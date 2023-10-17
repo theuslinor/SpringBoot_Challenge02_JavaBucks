@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.model.AddressClient;
+package com.compassuol.sp.challenge.msorders.model.AddressClient.response.services;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,10 +14,9 @@ public class AddressClient {
     @Column(name = "address_id")
     private Long id;
 
-    private String cep;
-
     private String street;
 
     private Long number;
 
+    private String cep;
 }

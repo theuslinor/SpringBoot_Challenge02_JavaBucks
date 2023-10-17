@@ -1,6 +1,6 @@
 package com.compassuol.sp.challenge.msorders.service;
 
-import com.compassuol.sp.challenge.msorders.model.AddressClient.AddressClient;
+import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.client.ViaCepFeign;
 import com.compassuol.sp.challenge.msorders.model.AddressClient.response.AddressClientResponse;
 import com.compassuol.sp.challenge.msorders.repository.OrderRepository;
@@ -24,7 +24,5 @@ public class OrderService {
     public AddressClientResponse searchCep(AddressClient addressClient){
         return viaCepFeign.searchLocationByCep(addressClient.getCep());
     }
-
-
 
 }
