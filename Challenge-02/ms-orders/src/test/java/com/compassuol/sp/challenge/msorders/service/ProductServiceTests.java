@@ -6,6 +6,7 @@ import com.compassuol.sp.challenge.msorders.entity.Product;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
+
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,13 +31,15 @@ public class ProductServiceTests {
 
     @Mock
      ProductRepository productRepository;
-
+  
     @Mock
     ProductMapper productMapper;
-
+  
     @Mock
     ProductDTOMapper productDTOMapper;
-
+  
+    @Mock
+    ProductMapper productMapper;
 
     ProductController productController;
 
