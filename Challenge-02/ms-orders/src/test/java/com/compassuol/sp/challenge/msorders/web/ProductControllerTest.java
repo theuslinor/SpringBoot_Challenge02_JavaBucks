@@ -16,7 +16,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
 import java.util.NoSuchElementException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -50,8 +49,8 @@ public class ProductControllerTest {
         when(productService.createProduct(PRODUCTDTO)).thenReturn(PRODUCTDTO);
 
         mockMvc.perform(post("/products").content(objectMapper.writeValueAsString(PRODUCTDTO))
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isCreated());
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isCreated());
     }
 
     @Test
@@ -147,12 +146,75 @@ public class ProductControllerTest {
     }
 
     @Test
+    void getProductById_WithValidId_ReturnsProduct() throws Exception {
+
+        Long productId = 1L;
+        Product product = new Product(productId, "Product 1", 100.0, "Description");
+
+        ProductDTO productDTO = new ProductDTO(product.getId(), product.getName(), product.getValue(), product.getDescription());
+        when(productService.getProductsById(productId)).thenReturn(productDTO);
+
+
+        MvcResult result = mockMvc.perform(get("/products/{id}", productId))
+        .andExpect(status().isOk())
+        .andReturn();
+
+
+        String responseBody = result.getResponse().getContentAsString();
+        ProductDTO responseProduct = objectMapper.readValue(responseBody, ProductDTO.class);
+
+        assertEquals(productId, responseProduct.getId());
+        assertEquals("Product 1", responseProduct.getName());
+        assertEquals(100.0, responseProduct.getValue());
+        assertEquals("Description", responseProduct.getDescription());
+    }
+
+    @Test
+    void getProductById_WithInvalidId_ReturnsNotFound() throws Exception {
+
+        Long productId = null;
+
+        when(productService.getProductsById(null)).thenThrow(NoSuchElementException.class);
+
+        MvcResult result = mockMvc.perform(get("/products/{id}", productId))
+        .andExpect(status().isNotFound())
+        .andReturn();
+    }
+
+   @Test
+    void getAllProducts_ReturnsListOfProducts() throws Exception {
+
+        List<ProductDTO> productDTOList = Arrays.asList(new ProductDTO(1L, "tayday",0.0, "jogo da fazendinha"),
+        new ProductDTO(2L,"freefire",0.0,"jogo de tiro"));
+
+        when(productService.getAll()).thenReturn(productDTOList);
+
+        MvcResult result = mockMvc.perform(get("/products"))
+        .andExpect(status().isOk())
+        .andReturn();
+
+        String responseBody = result.getResponse().getContentAsString();
+        List<ProductDTO> responseProducts = objectMapper.readValue(responseBody, new TypeReference<List<ProductDTO>>() {});
+
+        assertEquals(2, responseProducts.size());
+        assertEquals("tayday", responseProducts.get(0).getName());
+        assertEquals("freefire", responseProducts.get(1).getName());
+    }
+
+    @Test
+    void getAllProducts_ReturnsListEmpty(){
+        when(productService.getAll()).thenReturn(Collections.emptyList());
+        List<ProductDTO> result = productService.getAll();
+        assertThat(result).isEmpty();
+    }
+
+    @Test
     public void updateProductName_WithExistingName_ReturnsConflict() throws Exception {
         when(productService.updateProduct(anyLong(), any(ProductDTO.class))).thenThrow(DataIntegrityViolationException.class);
         mockMvc.perform(put("/products/{productId}", 1)
-                        .content(objectMapper.writeValueAsString(PRODUCTDTO))
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isConflict());
+        .content(objectMapper.writeValueAsString(PRODUCTDTO))
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isConflict());
     }
 
     @Test
@@ -179,5 +241,3 @@ public class ProductControllerTest {
         }
     }
 }
-
-
