@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.model.AddressClient.response.services;
+package com.compassuol.sp.challenge.msorders.model.services;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

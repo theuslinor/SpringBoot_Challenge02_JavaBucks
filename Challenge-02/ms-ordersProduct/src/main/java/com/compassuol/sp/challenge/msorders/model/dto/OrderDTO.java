@@ -1,9 +1,7 @@
 package com.compassuol.sp.challenge.msorders.model.dto;
 
-import com.compassuol.sp.challenge.msorders.model.productService.ProductService;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.AddressClient;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.ProductService;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.AddressClient;
+import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
+import com.compassuol.sp.challenge.msorders.model.services.ProductService;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

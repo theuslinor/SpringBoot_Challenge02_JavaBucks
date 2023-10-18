@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.model.AddressClient.response;
+package com.compassuol.sp.challenge.msorders.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

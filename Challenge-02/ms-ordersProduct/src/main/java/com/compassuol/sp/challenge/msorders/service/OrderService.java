@@ -1,9 +1,8 @@
 package com.compassuol.sp.challenge.msorders.service;
 
-import com.compassuol.sp.challenge.msorders.model.AddressClient.AddressClient;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.client.ViaCepFeign;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.AddressClientResponse;
+import com.compassuol.sp.challenge.msorders.model.response.AddressClientResponse;
+import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.repository.OrderRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;

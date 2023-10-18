@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.model.AddressClient;
+package com.compassuol.sp.challenge.msorders.model.request;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,16 +8,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "order_viaCep")
-public class AddressClient {
-    @Id
-    @Column(name = "address_id")
+public class AddressClientRequest {
     private Long id;
-
-    private String cep;
 
     private String street;
 
     private Long number;
 
+    private String cep;
 }

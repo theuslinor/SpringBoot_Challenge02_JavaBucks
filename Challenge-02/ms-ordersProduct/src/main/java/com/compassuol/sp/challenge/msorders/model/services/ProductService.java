@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.model.productService;
+package com.compassuol.sp.challenge.msorders.model.services;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
