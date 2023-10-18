@@ -10,4 +10,3 @@ class MsOrdersApplicationTests {
 	void contextLoads() {
 	}
 }
-

@@ -6,7 +6,6 @@ import com.compassuol.sp.challenge.msorders.exception.ProductNotFoundException;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +42,7 @@ public class ProductService {
 
     public Product updateProduct(Long id, ProductDTO productDTO) {
         Product existingProduct = productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException());
+        .orElseThrow(() -> new ProductNotFoundException());
         existingProduct.setName(productDTO.getName());
         existingProduct.setDescription(productDTO.getDescription());
         existingProduct.setValue(productDTO.getValue());
@@ -65,5 +64,6 @@ public class ProductService {
         }
         productRepository.deleteById(id);
     }
+
 
 }

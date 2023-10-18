@@ -1,4 +1,6 @@
+
  <h1 align="center">
+  
     <img src = "https://github.com/theuslinor/SpringBoot_Challenge02_JavaBucks/assets/128644651/38212ca4-1ad3-4240-84ad-975ac706bd64" style="margin-top: 10px; height: 300px; width: 300px; border-radius: 10px" ">
 		<p>Java Bucks</p>
 	</h1> 
@@ -56,7 +58,6 @@ Example of how to get product from the database by id using GET:
 >
 Example of how to delete a product from the database by id using DELETE:
 #### curl --location --request DELETE '(http://localhost:8080/products/5)'
-
 
 After the "Products/" ID is used to capture, the product with that specific ID and perform the desired operation.
 
