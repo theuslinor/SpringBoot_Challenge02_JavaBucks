@@ -2,15 +2,16 @@ package com.compassuol.sp.challenge.msorders.service;
 
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.exception.ProductNotFoundException;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -34,21 +35,22 @@ public class ProductService {
         return productDTOList;
     }
 
-    //Lógica de buscar pelo Id
     public ProductDTO getProductsById(Long id) {
-        Product product= productRepository.findById(id).orElse(null);
-        if (product != null) {
-            return productDTOMapper.createProductDTO(product);
-        } else {
-            return null;
-        }
+        Product product= productRepository.findById(id)
+        .orElseThrow(() -> new ProductNotFoundException());
+        return productDTOMapper.createProductDTO(product);
     }
 
-    public Product updateProduct(Long id, ProductDTO productDTO){
-        Product product = productMapper.createProduct(productDTO);
-        product.setId(id);
-        return productRepository.save(product);
+    public Product updateProduct(Long id, ProductDTO productDTO) {
+        Product existingProduct = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException());
+        existingProduct.setName(productDTO.getName());
+        existingProduct.setDescription(productDTO.getDescription());
+        existingProduct.setValue(productDTO.getValue());
+
+        return productRepository.save(existingProduct);
     }
+
 
     public ProductDTO createProduct(ProductDTO productRequestDTO){
         Product product = productMapper.createProduct(productRequestDTO);
@@ -57,6 +59,10 @@ public class ProductService {
     }
 
     public void delete(Long id) {
+        if (!productRepository.existsById(id)) {
+
+            throw new ProductNotFoundException();
+        }
         productRepository.deleteById(id);
     }
 

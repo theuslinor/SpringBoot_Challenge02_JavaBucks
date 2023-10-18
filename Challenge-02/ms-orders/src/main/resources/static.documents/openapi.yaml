@@ -4,34 +4,61 @@ info:
   description: |
    - [Product api allows the user to manipulate product data, searching by id, returning all registered products, modifying, deleting or creating new products.]
   version: 1.0
+
 servers:
   - url: "http://localhost:8080"
     description: Generated server url
 paths:
-  /products:
-    get:
-      summary: Returns a list products
+ /products:
+  get:
+      summary: List of products
       operationId: getAllProducts
       responses:
         '200':
           description: OK
           content:
-            application/xml:
+            application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/ProductDTO'
+              example:
+                - id: 1
+                  name:The Witcher 3: Wild Hunt
+                  value: 29.98
+                  description: Embarque em uma épica jornada de caça a monstros. Escolhas impactam o destino neste RPG imersivo.
+                - id: 2
+                  name: Overwatch 2
+                  value: 0.0
+                  description: Batalhas frenéticas entre heróis em equipes. Estratégia e habilidade se unem neste shooter colorido.
         '404':
-          description: Product not found
-    post:
+          description: not found
 
+
+  post:
       summary: Add a new product to the database
       operationId: creatProduct
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ProductDTO'
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the product
+                value:
+                  type: number
+                  format: double
+                  description: Value of the product
+                description:
+                  type: string
+                  description: Description of the products
+            example:
+                id: 10
+                name: The Last Of Us Part 1
+                value: 320.00
+                description: The game takes place twenty years after the outbreak of infection caused by a mutation of the Cordyceps fungus that destroyed much of human civilization.
 
         required: true
       responses:
@@ -41,66 +68,91 @@ paths:
             "*/*":
               schema:
                 $ref: '#/components/schemas/ProductDTO'
-        '405':
-          description: Invalid input
+        '400':
+          description: Bad Request
+        '409':
+          description: Conflict
 
-  /products/{Id}:
-    get:
-      summary: Find product by ID
-      description: Returns a single product
-      operationId: getProductById
+
+ /products/{Id}:
+  get:
+     summary: Find product by ID
+     description: Returns a single product
+     operationId: getProductById
+     parameters:
+       - name: Product Id
+         in: path
+         description: ID of product to return
+         required: true
+         schema:
+            type: integer
+            format: int64
+     responses:
+         '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ProductDTO'
+                example:
+                  id: 1
+                  name: "The Witcher 3: Wild Hunt"
+                  value: 29.98
+                  description: Embarque em uma épica jornada de caça a monstros. Escolhas impactam o destino neste RPG imersivo.
+
+
+         '400':
+            description: Bad Request
+         '404':
+           description: not found
+
+
+  put:
+      summary: Updates a product
+      operationId: updateProduct
+      requestBody:
+         content:
+           application/json:
+             schema:
+               type: object
+               properties:
+                 name:
+                   type: string
+                   description: Name of the product
+                 value:
+                   type: number
+                   format: double
+                   description: Value of the product
+                 description:
+                   type: string
+                   description: Description of the products
+
       parameters:
-        - name: productId
+        - name: product Id
           in: path
-          description: ID of product to return
+          description: ID of the product that needs to be updated, passed in the url
           required: true
           schema:
             type: integer
             format: int64
+
+
       responses:
         '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductDTO'
+          description: OK
 
-        '400':
-          description: Invalid ID supplied
         '404':
-          description: Product not found
+          description: not found
+
+        '409':
+          description: conflict
 
 
-    put:
-
-      summary: Updates a product
-      description: ''
-      operationId: updateProduct
-      parameters:
-        - name: productId
-          in: path
-          description: ID of product that needs to be updated
-          required: true
-          schema:
-            type: integer
-            format: int64
-      responses:
-        '405':
-          description: Invalid input
-
-
-    delete:
-
+  delete:
       summary: Deletes a product
-      description: delete a product
       operationId: deleteProduct
       parameters:
-        - name: api_key
-          in: header
-          description: ''
-          required: false
-          schema:
-            type: string
+
         - name: productId
           in: path
           description: Product id to delete
@@ -109,8 +161,12 @@ paths:
             type: integer
             format: int64
       responses:
+        '200':
+          description: OK
+
         '400':
-          description: Invalid product value
+          description: Bad Request
+
 components:
   schemas:
     ProductDTO:

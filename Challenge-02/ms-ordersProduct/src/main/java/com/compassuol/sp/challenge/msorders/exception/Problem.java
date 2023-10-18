@@ -4,12 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
 @Getter
 @AllArgsConstructor
 public class Problem {
-
     @JsonProperty("Code")
     private final int code;
 
@@ -19,7 +17,7 @@ public class Problem {
     @JsonProperty("Message")
     private final String message;
 
-    public Problem(ErrorCode errorCode, ProductNotFoundException exception){
+    public Problem(ErrorCode errorCode, OrderNotFoundException exception){
         this.code = exception.getStatus().value();
         this.status = errorCode.name();
         this.message = errorCode.getMessage();
