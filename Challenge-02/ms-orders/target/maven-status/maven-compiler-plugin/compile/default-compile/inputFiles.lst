@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\mathe\OneDrive\Documentos\Estudos\Challenge-02\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\entity\Product.java
 C:\Users\mathe\OneDrive\Documentos\Estudos\Challenge-02\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\exception\ApiExceptionHandler.java
 C:\Users\mathe\OneDrive\Documentos\Estudos\Challenge-02\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\MsOrdersApplication.java
@@ -10,3 +11,17 @@ C:\Users\mathe\OneDrive\Documentos\Estudos\Challenge-02\Challenge-02\ms-orders\s
 C:\Users\mathe\OneDrive\Documentos\Estudos\Challenge-02\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\exception\ProductNotFoundException.java
 C:\Users\mathe\OneDrive\Documentos\Estudos\Challenge-02\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\controller\ProductController.java
 C:\Users\mathe\OneDrive\Documentos\Estudos\Challenge-02\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\exception\ErrorCode.java
+=======
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\service\ProductService.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\exception\ApiExceptionHandler.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\dto\ProductDTO.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\exception\ErrorCode.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\MsOrdersApplication.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\exception\Problem.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\exception\ProductNotFoundException.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\service\mapper\ProductDTOMapper.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\entity\Product.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\repository\ProductRepository.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\controller\ProductController.java
+C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-orders\src\main\java\com\compassuol\sp\challenge\msorders\service\mapper\ProductMapper.java
+>>>>>>> 31840b5c395b29fc01bc4741c5bca7e03e33414f
