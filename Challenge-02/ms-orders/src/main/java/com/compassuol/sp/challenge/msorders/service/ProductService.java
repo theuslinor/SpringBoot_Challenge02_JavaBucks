@@ -41,11 +41,16 @@ public class ProductService {
         return productDTOMapper.createProductDTO(product);
     }
 
-    public Product updateProduct(Long id, ProductDTO productDTO){
-        Product product = productMapper.createProduct(productDTO);
-        product.setId(id);
-        return productRepository.save(product);
+    public Product updateProduct(Long id, ProductDTO productDTO) {
+        Product existingProduct = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException());
+        existingProduct.setName(productDTO.getName());
+        existingProduct.setDescription(productDTO.getDescription());
+        existingProduct.setValue(productDTO.getValue());
+
+        return productRepository.save(existingProduct);
     }
+
 
     public ProductDTO createProduct(ProductDTO productRequestDTO){
         Product product = productMapper.createProduct(productRequestDTO);
@@ -55,7 +60,8 @@ public class ProductService {
 
     public void delete(Long id) {
         if (!productRepository.existsById(id)) {
-            throw new EntityNotFoundException();
+
+            throw new ProductNotFoundException();
         }
         productRepository.deleteById(id);
     }
