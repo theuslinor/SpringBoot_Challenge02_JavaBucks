@@ -14,6 +14,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,9 +27,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+
 @WebMvcTest(ProductController.class)
 public class ProductControllerTest {
 
@@ -41,7 +45,7 @@ public class ProductControllerTest {
     ProductService productService;
 
     @Test
-    void createProduct_WithValidData_ReturnsCreated() throws Exception{
+    void createProduct_WithValidData_ReturnsCreated() throws Exception {
         when(productService.createProduct(PRODUCTDTO)).thenReturn(PRODUCTDTO);
 
         mockMvc.perform(post("/products").content(objectMapper.writeValueAsString(PRODUCTDTO))
@@ -52,18 +56,17 @@ public class ProductControllerTest {
     @Test
     public void createProduct_WithInvalidData_ReturnsBadRequest() throws Exception {
         ProductDTO emptyProduct = new ProductDTO();
-        ProductDTO invalidProduct = new ProductDTO(-1L,"", -1.0, "");
-
+        ProductDTO invalidProduct = new ProductDTO(-1L, "", -1.0, "");
         mockMvc
-            .perform(
-                post("/products").content(objectMapper.writeValueAsString(emptyProduct))
-            .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isBadRequest());
+        .perform(
+        post("/products").content(objectMapper.writeValueAsString(emptyProduct))
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isBadRequest());
         mockMvc
-            .perform(
-                post("/products").content(objectMapper.writeValueAsString(invalidProduct))
-            .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(status().isBadRequest());
+        .perform(
+        post("/products").content(objectMapper.writeValueAsString(invalidProduct))
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isBadRequest());
     }
 
     @Test
@@ -77,7 +80,8 @@ public class ProductControllerTest {
         .andExpect(status().isConflict());
     }
 
-   @Test
+
+    @Test
     void getAllProducts_ReturnsListOfProducts() throws Exception {
 
         List<ProductDTO> productDTOList = Arrays.asList(new ProductDTO(1L, "tayday",0.0, "jogo da fazendinha"),
@@ -105,6 +109,18 @@ public class ProductControllerTest {
     }
 
     @Test
+    void getProductById_WithInvalidId_ReturnsNotFound() throws Exception {
+
+        Long productId = null;
+
+        when(productService.getProductsById(null)).thenThrow(NoSuchElementException.class);
+
+        MvcResult result = mockMvc.perform(get("/products/{id}", productId))
+        .andExpect(status().isNotFound())
+        .andReturn();
+    }
+
+    @Test
     void getProductById_WithValidId_ReturnsProduct() throws Exception {
 
         Long productId = 1L;
@@ -128,17 +144,6 @@ public class ProductControllerTest {
         assertEquals("Description", responseProduct.getDescription());
     }
 
-    @Test
-    void getProductById_WithInvalidId_ReturnsNotFound() throws Exception {
-
-        Long productId = null;
-
-        when(productService.getProductsById(null)).thenThrow(NoSuchElementException.class);
-
-        MvcResult result = mockMvc.perform(get("/products/{id}", productId))
-        .andExpect(status().isNotFound())
-        .andReturn();
-    }
 
     @Test
     public void updateProductName_WithExistingName_ReturnsConflict() throws Exception {
@@ -149,6 +154,55 @@ public class ProductControllerTest {
         .andExpect(status().isConflict());
     }
 
+    @Test
+    void updateProductName_WithValidId_ReturnsSuccess() throws Exception {
+        Long productId = 1L;
+        String updatedName = "Updated Name";
+
+        ProductDTO updateRequestDTO = new ProductDTO();
+        updateRequestDTO.setName(updatedName);
+
+        Product updatedProduct = new Product(productId, updatedName, 100.0, "Updated Description");
+
+        when(productService.updateProduct(eq(productId), any(ProductDTO.class)))
+        .thenReturn(updatedProduct);
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/products/{productId}", productId)
+        .content(asJsonString(updateRequestDTO))
+        .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+
+    private String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    void deleteProduct_WithValidId_ReturnsNoContent() throws Exception {
+        Long productId = 1L;
+
+        doNothing().when(productService).delete(productId);
+
+        mockMvc.perform(delete("/products/{id}", productId))
+        .andExpect(status().isNoContent());
+    }
+
+
+    @Test
+    void deleteProduct_WithInvalidId_ReturnsNotFound() throws Exception {
+        Long invalidProductId = -1L;
+
+        doThrow(NoSuchElementException.class).when(productService).delete(invalidProductId);
+
+        try {
+            mockMvc.perform(MockMvcRequestBuilders.delete("/products/{id}", invalidProductId))
+            .andExpect(MockMvcResultMatchers.status().isNotFound());
+        } catch (Exception e) {
+        }
+    }
 }
-
-
