@@ -23,7 +23,7 @@ public class FeedBack {
     @NotBlank
     private String comment;
 
-    @NotBlank
+    @NotNull
     private Long order_id;
 
 }

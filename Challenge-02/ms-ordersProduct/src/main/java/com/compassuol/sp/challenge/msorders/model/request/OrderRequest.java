@@ -1,6 +1,5 @@
 package com.compassuol.sp.challenge.msorders.model.request;
 
-import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

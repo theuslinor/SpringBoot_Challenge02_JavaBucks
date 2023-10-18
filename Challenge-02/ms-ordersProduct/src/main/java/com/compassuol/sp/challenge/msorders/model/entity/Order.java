@@ -1,5 +1,6 @@
 package com.compassuol.sp.challenge.msorders.model.entity;
 
+import com.compassuol.sp.challenge.msorders.enems.Status;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
 import jakarta.persistence.*;
@@ -35,16 +36,19 @@ public class Order {
     private String paymentMethod;
 
     @NotNull
-    private Double subtotalValue;
+    private Double subtotal_value;
 
     @NotNull
     private Double discount;
 
     @NotNull
+    private Double total_value;
+
+    @NotNull
     private LocalDateTime date;
 
     @NotBlank
-    private String status;
+    private Status status;
 
     @NotBlank
     private String cancelReason;

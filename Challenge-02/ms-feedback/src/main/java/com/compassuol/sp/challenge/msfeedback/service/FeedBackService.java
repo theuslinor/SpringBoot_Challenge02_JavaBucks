@@ -1,5 +1,7 @@
 package com.compassuol.sp.challenge.msfeedback.service;
 
+import com.compassuol.sp.challenge.msfeedback.model.dto.FeedBackDTO;
+import com.compassuol.sp.challenge.msfeedback.model.entity.FeedBack;
 import com.compassuol.sp.challenge.msfeedback.repository.FeedBackRepository;
 import com.compassuol.sp.challenge.msfeedback.service.mapper.FeedBackMapper;
 import com.compassuol.sp.challenge.msfeedback.service.mapper.FeedbackDTOMapper;
@@ -16,4 +18,10 @@ public class FeedBackService {
     private final FeedbackDTOMapper feedbackDTOMapper;
 
 
+
+    public FeedBackDTO createFeedBack(FeedBackDTO productRequestDTO){
+        FeedBack product = feedBackMapper.createFeedBack(productRequestDTO);
+        FeedBack productResponse = feedBackRepository.save(product);
+        return feedbackDTOMapper.createFeedBackDTO(productResponse);
+    }
 }

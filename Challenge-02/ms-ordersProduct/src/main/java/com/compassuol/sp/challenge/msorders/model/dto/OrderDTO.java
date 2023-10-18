@@ -1,7 +1,10 @@
 package com.compassuol.sp.challenge.msorders.model.dto;
 
+import com.compassuol.sp.challenge.msorders.enems.Status;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -29,15 +32,19 @@ public class OrderDTO {
     private String paymentMethod;
 
     @NotNull
-    private Double subtotalValue;
+    private Double subtotal_value;
 
     @NotNull
     private Double discount;
 
+    @NotNull
+    private Double total_value;
+
+    @NotNull
     private LocalDateTime date;
 
     @NotBlank
-    private String status;
+    private Status status;
 
     @NotBlank
     private String cancelReason;
