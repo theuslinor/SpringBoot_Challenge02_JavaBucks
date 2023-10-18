@@ -1,30 +1,28 @@
 package com.compassuol.sp.challenge.msorders.service;
 
-import com.compassuol.sp.challenge.msorders.controller.ProductController;
 import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.exception.ProductNotFoundException;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductMapper;
-
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static com.compassuol.sp.challenge.msorders.common.ProductConstants.INVALID_PRODUCT;
 import static com.compassuol.sp.challenge.msorders.common.ProductConstants.PRODUCT;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,17 +34,13 @@ public class ProductServiceTests {
 
     @Mock
      ProductRepository productRepository;
-  
-    @Mock
-    ProductMapper productMapper;
-  
-    @Mock
-    ProductDTOMapper productDTOMapper;
-  
+
     @Mock
     ProductMapper productMapper;
 
-    ProductController productController;
+    @Mock
+    ProductDTOMapper productDTOMapper;
+
 
 
     @Test
@@ -82,18 +76,32 @@ public class ProductServiceTests {
         assertThat(productDTOs.get(0).getName()).isEqualTo("Product 1");
 
     }
+
     @Test
-    void getProductsById_With_InvalidId_ReturnsNotFound() {
+    void getProductsById_WithValidId_ReturnsProductDTO() {
 
-        Long invalidProductId = INVALID_PRODUCT.getId();
-        List<Product> products = Arrays.asList(
-        new Product(1L,"Product 1", 10.0,"Product 1"));
+        Product mockProduct = new Product(1L, "Test Product", 99.99, "Sample Description");
+        ProductDTO expectedProductDTO = new ProductDTO(1L, "Test Product", 99.99, "Sample Description");
 
-        when(productRepository.findById(invalidProductId)).thenReturn(Optional.empty());
+        Mockito.when(productRepository.findById(mockProduct.getId())).thenReturn(Optional.of(mockProduct));
+        Mockito.when(productDTOMapper.createProductDTO(mockProduct)).thenReturn(expectedProductDTO);
 
-        ResponseEntity<ProductDTO> response = productController.getProductsById(invalidProductId);
+        ProductDTO actualProductDTO = productService.getProductsById(mockProduct.getId());
 
-        Assertions.assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+        Mockito.verify(productRepository, Mockito.times(1)).findById(mockProduct.getId());
+        Mockito.verify(productDTOMapper, Mockito.times(1)).createProductDTO(mockProduct);
+
+        assertEquals(expectedProductDTO, actualProductDTO);
     }
 
+    @Test
+    void getProductsById_WithInvalidId_ThrowsProductNotFoundException() {
+        Long invalidProductId = -112213L;
+
+        when(productRepository.findById(invalidProductId)).thenThrow(ProductNotFoundException.class);
+
+        Assertions.assertThrows(ProductNotFoundException.class, () -> {
+            productService.getProductsById(invalidProductId);
+        });
+    }
 }

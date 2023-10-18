@@ -36,12 +36,6 @@ public class ApiExceptionHandler {
         var problem = new Problem(ErrorCode.NOT_FOUND, HttpStatus.NOT_FOUND);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
     }
-//    @ExceptionHandler(IOException.class)
-//    public ResponseEntity<Object> handleIOException() {
-//        var problem = new Problem(ErrorCode.NOT_FOUND, HttpStatus.NOT_FOUND);
-//        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
-//    }
-
     @ExceptionHandler(IOException.class)
     public ResponseEntity<Object> handleIOException() {
         var problem = new Problem(ErrorCode.NOT_FOUND, HttpStatus.NOT_FOUND);
