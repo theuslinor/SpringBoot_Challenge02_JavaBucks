@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+ms-orders,com.compassuol.sp.challenge.msorders.entity,Product,124,98,26,12,5,7,25,9,7,8
+ms-orders,com.compassuol.sp.challenge.msorders,MsOrdersApplication,5,3,0,0,2,1,1,1,1,1
+ms-orders,com.compassuol.sp.challenge.msorders.dto,ProductDTO,96,114,26,12,0,7,20,13,2,12
+ms-orders,com.compassuol.sp.challenge.msorders.controller,ProductController,9,39,0,0,2,9,1,5,1,5
+ms-orders,com.compassuol.sp.challenge.msorders.service,ProductService,50,69,0,4,9,15,4,6,4,4
+ms-orders,com.compassuol.sp.challenge.msorders.exception,ApiExceptionHandler,34,25,0,0,6,5,3,3,3,3
+ms-orders,com.compassuol.sp.challenge.msorders.exception,ProductNotFoundException,6,11,0,0,2,4,2,1,2,1
+ms-orders,com.compassuol.sp.challenge.msorders.exception,Problem,43,24,0,0,11,8,3,4,3,4
+ms-orders,com.compassuol.sp.challenge.msorders.exception,ErrorCode,0,42,0,0,0,7,0,3,0,3
+ms-orders,com.compassuol.sp.challenge.msorders.service.mapper,ProductMapper,22,3,0,0,6,1,1,1,1,1
+ms-orders,com.compassuol.sp.challenge.msorders.service.mapper,ProductDTOMapper,22,3,0,0,6,1,1,1,1,1

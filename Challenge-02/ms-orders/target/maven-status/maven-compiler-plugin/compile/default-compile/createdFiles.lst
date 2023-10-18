@@ -1,0 +1,12 @@
+com\compassuol\sp\challenge\msorders\service\mapper\ProductDTOMapper.class
+com\compassuol\sp\challenge\msorders\service\mapper\ProductMapper.class
+com\compassuol\sp\challenge\msorders\exception\ApiExceptionHandler.class
+com\compassuol\sp\challenge\msorders\exception\Problem.class
+com\compassuol\sp\challenge\msorders\exception\ProductNotFoundException.class
+com\compassuol\sp\challenge\msorders\dto\ProductDTO.class
+com\compassuol\sp\challenge\msorders\entity\Product.class
+com\compassuol\sp\challenge\msorders\service\ProductService.class
+com\compassuol\sp\challenge\msorders\controller\ProductController.class
+com\compassuol\sp\challenge\msorders\MsOrdersApplication.class
+com\compassuol\sp\challenge\msorders\repository\ProductRepository.class
+com\compassuol\sp\challenge\msorders\exception\ErrorCode.class
