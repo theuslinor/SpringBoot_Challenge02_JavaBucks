@@ -22,6 +22,13 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderDTOMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/enems/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/enems/Status.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +69,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "putOrder",
-    "last_opened_file_path": "C:/Users/mathe/OneDrive/Área de Trabalho/clone/Challenge-02/ms-orders",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/User/Desktop/Compass/week-8(challenge)/Nova pasta/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-orders",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,7 +84,7 @@
       <recent name="com.compassuol.sp.challenge.msorders.model.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MsOrdersApplication">
+  <component name="RunManager" selected="Application.MsOrdersApplication (1)">
     <configuration name="MsOrdersApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.compassuol.sp.challenge.msorders.MsOrdersApplication" />
       <module name="ms-ordersProduct" />

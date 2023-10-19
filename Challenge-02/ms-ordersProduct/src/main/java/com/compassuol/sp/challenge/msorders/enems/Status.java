@@ -11,7 +11,9 @@ public enum Status {
     SENT,
 
     @JsonProperty("CANCELED")
-    CANCELED
+    CANCELED,
 
+    @JsonProperty("DELIVERED")
+    DELIVERED
 
 }
