@@ -1,5 +1,6 @@
 package com.compassuol.sp.challenge.msorders.model.entity;
 
+import com.compassuol.sp.challenge.msorders.enums.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
@@ -7,14 +8,12 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Entity(name = "order_tb")
 public class Order {
 
@@ -33,7 +32,8 @@ public class Order {
     private AddressClient address;
 
     @NotBlank
-    private String paymentMethod;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 
     @NotNull
     private Double subtotal_value;
@@ -48,6 +48,7 @@ public class Order {
     private LocalDateTime date;
 
     @NotBlank
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @NotBlank

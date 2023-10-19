@@ -1,10 +1,9 @@
 package com.compassuol.sp.challenge.msorders.controller;
 
 
+import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
-import com.compassuol.sp.challenge.msorders.model.request.OrderRequest;
-import com.compassuol.sp.challenge.msorders.model.response.OrderResponse;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.service.OrderService;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;
@@ -48,4 +47,10 @@ public class OrderController {
         List<OrderDTO> orderDTOS = orderService.getAll();
         return ResponseEntity.ok(orderDTOS);
     }
+    @GetMapping("/{status}")
+    public ResponseEntity<List<OrderDTO>> getAllOrderById(@PathVariable("status") Status status){
+        List<OrderDTO> orderDTOS = orderService.getOrderByStatus(status);
+        return ResponseEntity.ok(orderDTOS);
+    }
 }
+
