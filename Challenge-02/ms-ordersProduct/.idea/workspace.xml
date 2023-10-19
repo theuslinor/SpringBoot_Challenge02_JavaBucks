@@ -5,6 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/OrderUpdateNotAllowedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-orders/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/OrderNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/OrderNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/Problem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderDTOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java" afterDir="false" />
@@ -16,6 +34,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -37,6 +62,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -46,6 +75,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "a597c99f8eeb204b08ff0e50a7b161e8",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -105,6 +135,8 @@
       <option name="presentableId" value="Default" />
       <updated>1697569652833</updated>
       <workItem from="1697569655119" duration="778000" />
+      <workItem from="1697730499803" duration="937000" />
+      <workItem from="1697732030329" duration="19209000" />
     </task>
     <servers />
   </component>
