@@ -1,5 +1,6 @@
 package com.compassuol.sp.challenge.msorders.model.entity;
 
+import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.enems.Status;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
@@ -33,7 +34,8 @@ public class Order {
     private AddressClient address;
 
     @NotBlank
-    private String paymentMethod;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 
     @NotNull
     private Double subtotal_value;

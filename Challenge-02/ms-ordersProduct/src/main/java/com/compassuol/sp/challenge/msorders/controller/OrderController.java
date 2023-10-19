@@ -29,7 +29,13 @@ public class OrderController {
     @GetMapping("/consultaOrder")
     public ResponseEntity Order(@RequestBody OrderDTO orderRequest){
         Order orderResponse = orderMapper.createOrderDTO(orderRequest);
-
         return null;
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<OrderDTO> updateOrder(@PathVariable Long id, @RequestBody OrderDTO orderDTO) {
+        orderService.updateOrder(id, orderDTO);
+        return ResponseEntity.ok().build();
+    }
+
 }
