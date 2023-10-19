@@ -15,12 +15,12 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ProductService {
+
     private final ProductRepository productRepository;
 
-    private final ProductMapper productMapper;
+    public ProductMapper productMapper;
 
-    private final ProductDTOMapper productDTOMapper;
-
+    public ProductDTOMapper productDTOMapper;
 
     public List<ProductDTO> getAll() {
         List<Product> productList = productRepository.findAll();
@@ -35,7 +35,7 @@ public class ProductService {
     }
 
     public ProductDTO getProductsById(Long id) {
-        Product product= productRepository.findById(id)
+        Product product = productRepository.findById(id)
         .orElseThrow(() -> new ProductNotFoundException());
         return productDTOMapper.createProductDTO(product);
     }
@@ -51,7 +51,7 @@ public class ProductService {
     }
 
 
-    public ProductDTO createProduct(ProductDTO productRequestDTO){
+    public ProductDTO createProduct(ProductDTO productRequestDTO) {
         Product product = productMapper.createProduct(productRequestDTO);
         Product productResponse = productRepository.save(product);
         return productDTOMapper.createProductDTO(productResponse);
