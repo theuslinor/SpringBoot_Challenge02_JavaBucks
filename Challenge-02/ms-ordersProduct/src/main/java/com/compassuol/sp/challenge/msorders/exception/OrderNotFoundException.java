@@ -17,6 +17,6 @@ public class OrderNotFoundException extends RuntimeException{
     public OrderNotFoundException() {
         super(ErrorCode.NOT_FOUND.name());
         this.status = HttpStatus.NOT_FOUND;
-        this.errorCode = ErrorCode.NOT_FOUND;
+        this.errorCode = ErrorCode.ORDER_UPDATE_NOT_ALLOWED;
     }
 }

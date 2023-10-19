@@ -23,6 +23,12 @@ public class Problem {
         this.message = errorCode.getMessage();
     }
 
+    public Problem(ErrorCode errorCode, OrderUpdateNotAllowedException exception){
+        this.code = exception.getStatus().value();
+        this.status = errorCode.name();
+        this.message = errorCode.getMessage();
+    }
+
     public Problem(ErrorCode errorCode){
         this.code = HttpStatus.INTERNAL_SERVER_ERROR.value();
         this.status = errorCode.name();
@@ -34,4 +40,5 @@ public class Problem {
         this.status = errorCode.name();
         this.message = errorCode.getMessage();
     }
+
 }

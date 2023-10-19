@@ -10,12 +10,9 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Entity(name = "order_tb")
 public class Order {
 
@@ -50,12 +47,12 @@ public class Order {
     private LocalDateTime date;
 
     @NotBlank
+    @Enumerated(EnumType.STRING)
     private Status status;
 
-    @NotBlank
+
     private String cancelReason;
 
-    @NotBlank
     private String cancelDate;
 
 }

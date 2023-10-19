@@ -1,6 +1,5 @@
 package com.compassuol.sp.challenge.msorders.service.mapper;
 
-import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
 import org.springframework.stereotype.Component;
@@ -16,7 +15,7 @@ public class OrderDTOMapper {
         orderDTOCreate.setId(order.getId());
         orderDTOCreate.setProductService(order.getProductService());
         orderDTOCreate.setAddress(order.getAddress());
-        orderDTOCreate.setPaymentMethod(String.valueOf(order.getPaymentMethod()));
+        orderDTOCreate.setPaymentMethod(order.getPaymentMethod());
         orderDTOCreate.setSubtotal_value(order.getSubtotal_value());
         orderDTOCreate.setDiscount(order.getDiscount());
         orderDTOCreate.setDate(LocalDateTime.now(ZoneOffset.UTC));
