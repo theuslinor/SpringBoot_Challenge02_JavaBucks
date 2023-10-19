@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.enems;
+package com.compassuol.sp.challenge.msorders.enums;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,10 +1,8 @@
 package com.compassuol.sp.challenge.msorders.model.dto;
 
-import com.compassuol.sp.challenge.msorders.enems.Status;
+import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

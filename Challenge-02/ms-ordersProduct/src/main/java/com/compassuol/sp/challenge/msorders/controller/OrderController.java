@@ -9,8 +9,11 @@ import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.service.OrderService;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -31,5 +34,18 @@ public class OrderController {
         Order orderResponse = orderMapper.createOrderDTO(orderRequest);
 
         return null;
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @GetMapping("/{id}")
+    public ResponseEntity<OrderDTO> getOrdersById(@PathVariable Long id){
+        OrderDTO orderDTO= orderService.getOrderById(id);
+        return ResponseEntity.ok().body(orderDTO);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<OrderDTO>> getAllOrder(){
+        List<OrderDTO> orderDTOS = orderService.getAll();
+        return ResponseEntity.ok(orderDTOS);
     }
 }

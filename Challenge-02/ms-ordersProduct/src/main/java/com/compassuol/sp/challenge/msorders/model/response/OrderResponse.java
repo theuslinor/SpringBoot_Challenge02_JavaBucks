@@ -1,6 +1,6 @@
 package com.compassuol.sp.challenge.msorders.model.response;
 
-import com.compassuol.sp.challenge.msorders.enems.Status;
+import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

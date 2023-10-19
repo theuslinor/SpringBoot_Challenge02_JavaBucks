@@ -1,6 +1,6 @@
 package com.compassuol.sp.challenge.msorders.model.entity;
 
-import com.compassuol.sp.challenge.msorders.enems.Status;
+import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
 import jakarta.persistence.*;

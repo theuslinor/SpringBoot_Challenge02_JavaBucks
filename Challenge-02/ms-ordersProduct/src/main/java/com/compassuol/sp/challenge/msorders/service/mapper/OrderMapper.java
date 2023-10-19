@@ -16,7 +16,7 @@ public class OrderMapper {
         orderDTOCreate.setProductService(orderDTO.getProductService());
         orderDTOCreate.setAddress(orderDTO.getAddress());
         orderDTOCreate.setPaymentMethod(orderDTO.getPaymentMethod());
-        orderDTOCreate.setSubtotalValue(orderDTO.getSubtotalValue());
+        orderDTOCreate.setSubtotal_value(orderDTO.getSubtotal_value());
         orderDTOCreate.setDiscount(orderDTO.getDiscount());
         orderDTOCreate.setDate(LocalDateTime.now(ZoneOffset.UTC));
         orderDTOCreate.setStatus(orderDTO.getStatus());
