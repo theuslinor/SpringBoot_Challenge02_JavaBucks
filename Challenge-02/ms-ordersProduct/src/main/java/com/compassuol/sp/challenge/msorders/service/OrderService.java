@@ -27,7 +27,7 @@ public class OrderService {
     }
 
     public OrderDTO getOrderById(Long id) {
-        Order order= orderRepository.findById(id)
+        Order order = orderRepository.findById(id)
         .orElseThrow(() -> new OrderNotFoundException());
         return orderDTOMapper.createOrderDTO(order);
     }
