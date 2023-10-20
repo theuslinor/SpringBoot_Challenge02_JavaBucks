@@ -47,5 +47,12 @@ public class OrderController {
         List<OrderDTO> orderDTOS = orderService.getAll(status);
         return ResponseEntity.ok(orderDTOS);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<OrderDTO> updateOrder(@PathVariable Long id,
+                                                @RequestBody OrderDTO updatedOrderDTO) {
+        OrderDTO updatedOrder = orderService.updateOrder(id, updatedOrderDTO.getStatus(), updatedOrderDTO.getCancelReason());
+        return ResponseEntity.ok(updatedOrder);
+    }
 }
 

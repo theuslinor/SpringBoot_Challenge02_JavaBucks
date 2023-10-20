@@ -17,12 +17,6 @@ public class ApiExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public final ResponseEntity<Object> handlerMethodArgumentNotValidException() {
-        var problem = new Problem(ErrorCode.BAD_REQUEST, HttpStatus.BAD_REQUEST);
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problem);
-    }
-
     @ExceptionHandler(EmptyResultDataAccessException.class)
     private ResponseEntity<Object> handleBadRequest(EmptyResultDataAccessException ex){
         var problem = new Problem(ErrorCode.NOT_FOUND, HttpStatus.NOT_FOUND);
@@ -40,4 +34,17 @@ public class ApiExceptionHandler {
         var problem = new Problem(ErrorCode.SYSTEM_ERROR);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(problem);
     }
+
+    @ExceptionHandler(OrderUpdateNotAllowedException.class)
+    public final ResponseEntity<Object> handleOrderUpdateNotAllowedException(OrderUpdateNotAllowedException ex) {
+        var problem = new Problem(ErrorCode.ORDER_UPDATE_NOT_ALLOWED, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problem);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public final ResponseEntity<Object> handlerMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+        var problem = new Problem(ErrorCode.BAD_REQUEST, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problem);
+    }
+
 }

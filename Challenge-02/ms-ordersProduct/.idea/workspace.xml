@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
+    <list default="true" id="1f1a325f-52b3-4959-9baa-a21ec339e9b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/OrderUpdateNotAllowedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/OrderNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/OrderNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/exception/Problem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/banner.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barba.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barbearia_alura2.html" beforeDir="false" />
@@ -27,123 +40,40 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2Wu5VxepFnEnrIDrnSyMeF6njuo" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/Compass/week-8(challenge)/Nova pasta/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-orders&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="com.compassuol.sp.challenge.msorders.enums" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.compassuol.sp.challenge.msorders.model.services" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.MsOrdersApplication">
-    <configuration name="MsOrdersApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.compassuol.sp.challenge.msorders.MsOrdersApplication" />
-      <module name="ms-ordersProduct" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.compassuol.sp.challenge.msorders.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsOrdersApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.compassuol.sp.challenge.msorders.MsOrdersApplication" />
-      <module name="ms-orders" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.compassuol.sp.challenge.msorders.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MsOrdersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager">
+    <configuration name="MsOrdersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="ms-ordersProduct" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.compassuol.sp.challenge.msorders.MsOrdersApplication" />
-      <option name="VM_PARAMETERS" value="-Dserver.port=8081" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.compassuol.sp.challenge.msorders.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.MsOrdersApplication" />
-      <item itemvalue="Application.MsOrdersApplication (1)" />
-      <item itemvalue="Spring Boot.MsOrdersApplication" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MsOrdersApplication (1)" />
-        <item itemvalue="Application.MsOrdersApplication" />
+        <item itemvalue="Spring Boot.MsOrdersApplication" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="" />
-      <created>1697569652833</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1697569652833</updated>
-      <workItem from="1697569655119" duration="778000" />
-      <workItem from="1697668548045" duration="11000" />
-      <workItem from="1697668585876" duration="4791000" />
-      <workItem from="1697734203739" duration="1421000" />
-      <workItem from="1697735652784" duration="637000" />
-      <workItem from="1697820098143" duration="954000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>
