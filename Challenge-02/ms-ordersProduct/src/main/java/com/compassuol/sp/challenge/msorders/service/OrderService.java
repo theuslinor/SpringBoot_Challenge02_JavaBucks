@@ -12,14 +12,10 @@ import com.compassuol.sp.challenge.msorders.service.mapper.OrderDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -43,10 +39,15 @@ public class OrderService {
         return orderDTOMapper.createOrderDTO(order);
     }
 
-    public List<OrderDTO> getAll() {
-        List<Order> ordersList = orderRepository.findAll();
+    public List<OrderDTO> getAll(Status status) {
+        List<Order> ordersList;
         List<OrderDTO> orderDTOList = new ArrayList<>();
-        ordersList.sort(Comparator.comparing(Order::getDate).reversed());
+        if(status!=null){
+            ordersList = orderRepository.findAllByStatus(status);
+        }else{
+           ordersList = orderRepository.findAll();
+           ordersList.sort(Comparator.comparing(Order::getDate).reversed());
+        }
         for (Order order : ordersList) {
             OrderDTO orderDTO = orderDTOMapper.createOrderDTO(order);
             orderDTOList.add(orderDTO);
@@ -54,17 +55,4 @@ public class OrderService {
 
         return orderDTOList;
     }
-
-
-    public List<OrderDTO> getOrderByStatus(@PathVariable Status status) {
-        List<Order> ordersList = orderRepository.findAllByStatus(status);
-        List<OrderDTO> orderDTOList = new ArrayList<>();
-        for (Order order : ordersList) {
-            OrderDTO orderDTO = orderDTOMapper.createOrderDTO(order);
-            orderDTOList.add(orderDTO);
-        }
-
-        return orderDTOList;
-    }
-
 }

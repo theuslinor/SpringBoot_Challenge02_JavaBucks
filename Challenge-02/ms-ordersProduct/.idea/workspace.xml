@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/MsOrdersApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/MsOrdersApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/dto/ProductDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/dto/ProductDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/entity/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/exception/ErrorCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/exception/ErrorCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/exception/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/exception/Problem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/compassuol/sp/challenge/msorders/service/OrderServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/compassuol/sp/challenge/msorders/web/OrderControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/enums/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/repository/OrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/banner.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barba.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barbearia_alura2.html" beforeDir="false" />
@@ -76,24 +58,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/User/Desktop/Compass/week-8(challenge)/Nova pasta/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-orders",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/Compass/week-8(challenge)/Nova pasta/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-orders&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.compassuol.sp.challenge.msorders.enums" />
@@ -163,6 +145,7 @@
       <workItem from="1697668585876" duration="4791000" />
       <workItem from="1697734203739" duration="1421000" />
       <workItem from="1697735652784" duration="637000" />
+      <workItem from="1697820098143" duration="954000" />
     </task>
     <servers />
   </component>

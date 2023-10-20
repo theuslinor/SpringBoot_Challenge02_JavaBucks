@@ -43,13 +43,8 @@ public class OrderController {
     }
 
     @GetMapping
-    public ResponseEntity<List<OrderDTO>> getAllOrder(){
-        List<OrderDTO> orderDTOS = orderService.getAll();
-        return ResponseEntity.ok(orderDTOS);
-    }
-    @GetMapping("/{status}")
-    public ResponseEntity<List<OrderDTO>> getAllOrderById(@PathVariable("status") Status status){
-        List<OrderDTO> orderDTOS = orderService.getOrderByStatus(status);
+    public ResponseEntity<List<OrderDTO>> getAllOrder(@RequestParam(required = false) Status status){
+        List<OrderDTO> orderDTOS = orderService.getAll(status);
         return ResponseEntity.ok(orderDTOS);
     }
 }
