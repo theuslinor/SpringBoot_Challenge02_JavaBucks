@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="" />
+    <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barbearia_alura2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/beneficios.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/cabelo+barba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/cabelo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/contato.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/logo-branco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/produtos.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style-home.css.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/utensilios.jpg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,28 +38,28 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2Wu5VxepFnEnrIDrnSyMeF6njuo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/mathe/OneDrive/Documentos/Estudos/Challenge-02/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-ordersProduct",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathe/OneDrive/Documentos/Estudos/Challenge-02/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-ordersProduct&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="MsOrdersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
