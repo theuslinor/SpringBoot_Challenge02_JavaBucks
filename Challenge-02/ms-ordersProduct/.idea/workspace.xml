@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/compassuol/sp/challenge/msorders/service/OrderServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/compassuol/sp/challenge/msorders/web/OrderControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/banner.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barba.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barbearia_alura2.html" beforeDir="false" />
