@@ -18,9 +18,9 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public ProductMapper productMapper;
+    public final ProductMapper productMapper;
 
-    public ProductDTOMapper productDTOMapper;
+    public final ProductDTOMapper productDTOMapper;
 
     public List<ProductDTO> getAll() {
         List<Product> productList = productRepository.findAll();

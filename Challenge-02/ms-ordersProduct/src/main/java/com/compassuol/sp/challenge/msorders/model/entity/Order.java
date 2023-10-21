@@ -3,7 +3,6 @@ package com.compassuol.sp.challenge.msorders.model.entity;
 import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.enems.Status;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
-import com.compassuol.sp.challenge.msorders.model.services.ProductService;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -24,27 +23,26 @@ public class Order {
     private Long id;
 
     @NotNull
-    @ManyToOne
     @JoinColumn(name = "product_id")
-    private ProductService productService;
+    private Long productId;
 
     @NotNull
     @ManyToOne
     @JoinColumn(name = "address_id")
-    private AddressClient address;
+    private AddressClient addressId;
 
     @NotBlank
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
     @NotNull
-    private Double subtotal_value;
+    private Double subtotalValue;
 
     @NotNull
     private Double discount;
 
     @NotNull
-    private Double total_value;
+    private Double totalValue;
 
     @NotNull
     private LocalDateTime date;
@@ -53,10 +51,12 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @NotBlank
     private String cancelReason;
 
-    @NotBlank
     private String cancelDate;
+
+    public Order(Long id){
+        this.id = id;
+    }
 
 }

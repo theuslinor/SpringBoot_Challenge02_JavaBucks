@@ -1,22 +1,31 @@
 package com.compassuol.sp.challenge.msorders.model.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
+@Setter
+@ToString
 public class AddressClientResponse {
 
-    private String logradouro;
+    private Long id;
 
-    private String complemento;
+    private String street;
 
-    private String localidade;
+    private Long number;
 
-    private String bairro;
+    private String complement;
 
-    private String uf;
+    private String city;
 
-    private String cep;
+    @JsonIgnore
+    private String neighborhood;
+
+    private String state;
+
+    private String postal_code;
 
 }

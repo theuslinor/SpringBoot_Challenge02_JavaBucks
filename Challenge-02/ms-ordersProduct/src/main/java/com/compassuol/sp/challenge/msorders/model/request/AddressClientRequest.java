@@ -15,5 +15,5 @@ public class AddressClientRequest {
 
     private Long number;
 
-    private String cep;
+    private String zipCode;
 }
