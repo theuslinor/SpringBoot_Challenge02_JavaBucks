@@ -24,28 +24,16 @@ import java.util.List;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+
     private final OrderMapper orderMapper;
+
     private final OrderDTOMapper orderDTOMapper;
+
     private final ViaCepFeign viaCepFeign;
 
-    public AddressClientResponse searchCep(AddressClient addressClient) {
+    public AddressClientResponse searchCep(AddressClient addressClient){
         return viaCepFeign.searchLocationByCep(addressClient.getCep());
     }
-
-    public OrderDTO updateOrder(Long orderId, Status newStatus, String cancelReason) {
-        Order existingOrder = orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
-
-        if (existingOrder.getStatus() == Status.CONFIRMED) {
-            existingOrder.setStatus(newStatus);
-            existingOrder.setCancelDate(LocalDateTime.now(ZoneOffset.UTC).toString());
-            existingOrder.setCancelReason(cancelReason);
-        } else {
-             throw new OrderUpdateNotAllowedException();
-        }
-
-        return orderDTOMapper.createOrderDTO(existingOrder);
-    }
-
 
     public List<OrderDTO> getAll() {
         List<Order> orderList = orderRepository.findAll();
@@ -58,4 +46,39 @@ public class OrderService {
 
         return orderDTOList;
     }
+
+    public OrderDTO updateOrder(Long orderId, Status newStatus, String cancelReason) {
+        Order existingOrder = orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
+
+        if (existingOrder.getStatus() == Status.CONFIRMED) {
+            existingOrder.setStatus(newStatus);
+            existingOrder.setCancelDate(LocalDateTime.now(ZoneOffset.UTC).toString());
+            existingOrder.setCancelReason(cancelReason);
+        } else {
+            throw new OrderUpdateNotAllowedException();
+        }
+
+        return orderDTOMapper.createOrderDTO(existingOrder);
+    }
+
+    public OrderDTO cancelOrder(Long orderId) {
+        Order existingOrder = orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
+
+        if (existingOrder.getStatus() != Status.SENT) {
+            throw new OrderUpdateNotAllowedException();
+        }
+
+        LocalDateTime creationDate = existingOrder.getDate();
+        LocalDateTime currentDate = LocalDateTime.now(ZoneOffset.UTC);
+        if (creationDate.plusDays(90).isBefore(currentDate)) {
+            throw new OrderUpdateNotAllowedException();
+        }
+
+        existingOrder.setStatus(Status.CANCELED);
+        existingOrder.setCancelDate(currentDate.toString());
+
+        return orderDTOMapper.createOrderDTO(existingOrder);
+    }
+
+
 }

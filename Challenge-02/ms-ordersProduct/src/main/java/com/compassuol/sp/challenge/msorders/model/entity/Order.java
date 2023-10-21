@@ -50,9 +50,10 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-
+    @NotBlank
     private String cancelReason;
 
+    @NotBlank
     private String cancelDate;
 
 }

@@ -33,7 +33,6 @@ public class OrderController {
         return null;
     }
 
-
     @GetMapping
     public ResponseEntity<List<OrderDTO>> getAllOrder(){
         List<OrderDTO> orderDTOS = orderService.getAll();
@@ -47,5 +46,10 @@ public class OrderController {
         return ResponseEntity.ok(updatedOrder);
     }
 
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<OrderDTO> cancelOrder(@PathVariable Long id) {
+        OrderDTO canceledOrder = orderService.cancelOrder(id);
+        return ResponseEntity.ok(canceledOrder);
+    }
 
 }
