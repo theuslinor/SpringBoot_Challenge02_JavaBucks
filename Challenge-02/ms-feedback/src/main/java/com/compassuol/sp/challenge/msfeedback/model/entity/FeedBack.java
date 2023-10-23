@@ -18,12 +18,13 @@ public class FeedBack {
     private Long id;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private Status scale;
 
     @NotBlank
     private String comment;
 
     @NotNull
-    private Long order_id;
+    private Long orderId;
 
 }

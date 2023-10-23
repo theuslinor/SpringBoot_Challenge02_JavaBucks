@@ -2,7 +2,6 @@ package com.compassuol.sp.challenge.msfeedback.controller;
 
 
 import com.compassuol.sp.challenge.msfeedback.model.dto.FeedBackDTO;
-import com.compassuol.sp.challenge.msfeedback.model.entity.FeedBack;
 import com.compassuol.sp.challenge.msfeedback.service.FeedBackService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
