@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.model.AddressClient.response.services;
+package com.compassuol.sp.challenge.msorders.model.request;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,11 +9,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "order_product")
-public class ProductService {
-    @Id
-    @Column(name = "product_id")
+public class ProductServiceRequest {
     private Long id;
-
     private Long quantity;
 }

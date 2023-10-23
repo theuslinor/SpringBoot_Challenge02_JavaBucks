@@ -1,13 +1,19 @@
-package com.compassuol.sp.challenge.msorders.model.AddressClient.response;
+package com.compassuol.sp.challenge.msorders.model.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
+
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
-public class AddressClientResponse {
+@Setter
+@ToString
+public class AdressClienteViaCepResponse {
+    private Long id;
 
     private String logradouro;
+
+    private Long numero;
 
     private String complemento;
 
@@ -18,5 +24,4 @@ public class AddressClientResponse {
     private String uf;
 
     private String cep;
-
 }

@@ -11,7 +11,9 @@ public enum ErrorCode {
 
     BAD_REQUEST("Invalid Data"),
 
-    SYSTEM_ERROR("Unavailable Server");
+    SYSTEM_ERROR("Unavailable Server"),
+
+    ORDER_UPDATE_NOT_ALLOWED("Order Update Not Allowed");
 
     private final String message;
 }

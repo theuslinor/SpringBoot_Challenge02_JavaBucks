@@ -1,50 +1,46 @@
 package com.compassuol.sp.challenge.msorders.model.dto;
 
-import com.compassuol.sp.challenge.msorders.model.productService.ProductService;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.AddressClient;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.ProductService;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.AddressClient;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.compassuol.sp.challenge.msorders.enums.PaymentMethod;
+import com.compassuol.sp.challenge.msorders.enums.Status;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDTO {
 
     private Long id;
 
-    @NotNull
-    private ProductService productService;
+    private Long productId;
 
-    @NotNull
-    private AddressClient address;
+    private Long addressId;
 
-    @NotBlank
-    private String paymentMethod;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 
-    @NotNull
     private Double subtotalValue;
 
-    @NotNull
     private Double discount;
+
+    private Double totalValue;
 
     private LocalDateTime date;
 
-    @NotBlank
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    @NotBlank
     private String cancelReason;
 
-    @NotBlank
     private String cancelDate;
+
+    public OrderDTO(Long id){
+        this.id = id;
+    }
 
 }

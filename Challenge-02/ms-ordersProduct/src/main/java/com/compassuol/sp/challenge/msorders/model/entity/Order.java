@@ -1,21 +1,18 @@
 package com.compassuol.sp.challenge.msorders.model.entity;
 
-import com.compassuol.sp.challenge.msorders.model.productService.ProductService;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.AddressClient;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.ProductService;
-import com.compassuol.sp.challenge.msorders.model.AddressClient.response.services.AddressClient;
+import com.compassuol.sp.challenge.msorders.enums.PaymentMethod;
+import com.compassuol.sp.challenge.msorders.enums.Status;
+import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Entity(name = "order_tb")
 public class Order {
 
@@ -24,17 +21,15 @@ public class Order {
     private Long id;
 
     @NotNull
-    @ManyToOne
     @JoinColumn(name = "product_id")
-    private ProductService productService;
+    private Long productId;
 
     @NotNull
-    @ManyToOne
     @JoinColumn(name = "address_id")
-    private AddressClient address;
+    private Long addressId;
 
-    @NotBlank
-    private String paymentMethod;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
 
     @NotNull
     private Double subtotalValue;
@@ -43,15 +38,20 @@ public class Order {
     private Double discount;
 
     @NotNull
+    private Double totalValue;
+
+    @NotNull
     private LocalDateTime date;
 
-    @NotBlank
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    @NotBlank
     private String cancelReason;
 
-    @NotBlank
     private String cancelDate;
+
+    public Order(Long id){
+        this.id = id;
+    }
 
 }
