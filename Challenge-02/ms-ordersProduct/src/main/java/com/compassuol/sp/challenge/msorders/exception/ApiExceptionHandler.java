@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
 
 import java.io.IOException;
 
@@ -35,6 +36,11 @@ public class ApiExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
     }
 
+//    @ExceptionHandler(FeignException$NotFound.class)
+//    public ResponseEntity<Object> handleExceptionResolverException() {
+//        var problem = new Problem(ErrorCode.BAD_REQUEST, HttpStatus.BAD_REQUEST);
+//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(problem);
+//    }
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<Object> handlerAllExceptions(){
         var problem = new Problem(ErrorCode.SYSTEM_ERROR);

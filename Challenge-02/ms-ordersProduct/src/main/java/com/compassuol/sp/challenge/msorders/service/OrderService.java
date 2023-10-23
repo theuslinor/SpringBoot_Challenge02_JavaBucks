@@ -4,6 +4,7 @@ import com.compassuol.sp.challenge.msorders.client.ProductsFeign;
 import com.compassuol.sp.challenge.msorders.client.ViaCepFeign;
 import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.enems.Status;
+import com.compassuol.sp.challenge.msorders.exception.OrderNotFoundException;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
 import com.compassuol.sp.challenge.msorders.model.request.OrderRequest;
@@ -19,6 +20,8 @@ import com.compassuol.sp.challenge.msorders.repository.ProductServiceRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -60,6 +63,11 @@ public class OrderService {
 
         ProductService productServiceCreate = new ProductService();
         ProductService productService = productsFeign.getProductsById(orderRequest.getProductService().getId());
+        if(addressClientViaCepResponse == null || productService.getId() == null){
+            //throw new OrderNotFoundException();
+//            ResponseEntity<OrderDTO> response = new ResponseEntity<>();
+//            return ;
+        }
 
         productServiceCreate.setId(orderRequest.getProductService().getId());
         productServiceCreate.setQuantity(orderRequest.getProductService().getQuantity());
@@ -115,7 +123,7 @@ public class OrderService {
 
         orderCreate.setId(addressCreate.getId());
         orderCreate.setProductId(orderCreateDTO.getId());
-        orderCreate.setAddressId(addressCreate.getId());
+        orderCreate.setAddressId(100L);
         orderCreate.setPaymentMethod(orderRequest.getPayment_method());
         orderCreate.setSubtotalValue(orderResponse.getSubtotalValue());
         orderCreate.setDiscount(orderResponse.getDiscount());
