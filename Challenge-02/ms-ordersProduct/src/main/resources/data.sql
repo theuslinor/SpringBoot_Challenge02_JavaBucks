@@ -1,4 +1,4 @@
-INSERT INTO order_via_cep (address_id, cep, number, street)
+INSERT INTO order_via_cep (address_id, zip_code, number, street)
 VALUES
 (101, '12345-678', 1001, 'Rua Exemplo 1'),
 (102, '98765-432', 2002, 'Avenida Teste 2'),

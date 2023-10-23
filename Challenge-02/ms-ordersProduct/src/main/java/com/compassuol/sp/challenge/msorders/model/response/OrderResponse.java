@@ -1,11 +1,18 @@
 package com.compassuol.sp.challenge.msorders.model.response;
 
+<<<<<<< HEAD
 import com.compassuol.sp.challenge.msorders.enums.Status;
+=======
+import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
+import com.compassuol.sp.challenge.msorders.enems.Status;
+import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
+import com.compassuol.sp.challenge.msorders.model.request.ProductServiceRequest;
+>>>>>>> postOrder
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -13,24 +20,37 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderResponse {
+@ToString
+public class OrderResponse extends OrderDTO{
 
-    private Long id;
-
-    private ProductService products;
+    private ProductServiceRequest products;
 
     private AddressClientResponse addressClientResponse;
 
-    private String payment_method;
+    private PaymentMethod paymentMethod;
 
-    private Double subtotal_value;
+    private Double subtotalValue;
 
     private Double discount;
 
-    private Double total_value;
+    private Double totalValue;
 
-    private LocalDateTime created_date;
+    private LocalDateTime date;
 
     private Status status;
 
+    @JsonIgnore
+    private String cancelReason;
+
+    @JsonIgnore
+    private String cancelDate;
+
+    @JsonIgnore
+    private Long id;
+
+    @JsonIgnore
+    private Long productId;
+
+    @JsonIgnore
+    private Long addressId;
 }

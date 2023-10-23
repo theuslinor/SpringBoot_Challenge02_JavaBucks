@@ -15,3 +15,11 @@ Qsrc/test/java/com/compassuol/sp/challenge/msorders/web/ProductControllerTest.ja
 Ssrc/test/java/com/compassuol/sp/challenge/msorders/service/ProductServiceTests.java,1\6\16bd34b1624c39560350fcda66c348aff7d6df16
 …
 Usrc/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandler.java,6\3\63f23fdd901c44f1d9b3195082c0bf992380c5d9
+‡
+Wsrc/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java,8\9\896ab8ce5d909d98649844dfb22acacb5eb9b3e7
+„
+Tsrc/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java,8\2\82b7f8c8afafb1c17f57aa5b190f125f3b373773
+v
+Fsrc/main/java/com/compassuol/sp/challenge/msorders/entity/Product.java,a\f\af4f154e6785a0a8baf19abadacf8e2a72f900eb
+{
+Ksrc/main/java/com/compassuol/sp/challenge/msorders/MsOrdersApplication.java,c\e\ce74f68389a7e492aa5b01286c3eea63d7a2af13

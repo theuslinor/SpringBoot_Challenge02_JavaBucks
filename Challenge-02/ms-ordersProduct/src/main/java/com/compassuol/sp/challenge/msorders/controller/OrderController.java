@@ -28,11 +28,10 @@ public class OrderController {
         return ResponseEntity.ok(orderService.searchCep(addressClient));
     }
 
-    @GetMapping("/consultaOrder")
-    public ResponseEntity Order(@RequestBody OrderDTO orderRequest){
-        Order orderResponse = orderMapper.createOrderDTO(orderRequest);
-
-        return null;
+    @PostMapping
+    public ResponseEntity<OrderDTO> create(@RequestBody OrderRequest orderRequest){
+        OrderDTO orderResponse = orderService.createOrder(orderRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(orderResponse);
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
