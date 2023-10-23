@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msfeedback.enems;
+package com.compassuol.sp.challenge.msfeedback.enums;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

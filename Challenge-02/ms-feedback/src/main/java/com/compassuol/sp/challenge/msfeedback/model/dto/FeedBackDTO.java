@@ -1,13 +1,11 @@
 package com.compassuol.sp.challenge.msfeedback.model.dto;
 
-import com.compassuol.sp.challenge.msfeedback.enems.Status;
-import jakarta.persistence.Entity;
+import com.compassuol.sp.challenge.msfeedback.enums.Status;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
