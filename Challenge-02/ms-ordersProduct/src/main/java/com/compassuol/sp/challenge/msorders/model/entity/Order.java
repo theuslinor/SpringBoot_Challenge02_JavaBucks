@@ -46,10 +46,6 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> postOrder
     private String cancelReason;
 
     private String cancelDate;

@@ -1,13 +1,13 @@
 package com.compassuol.sp.challenge.msorders.model.response;
 
-<<<<<<< HEAD
+
 import com.compassuol.sp.challenge.msorders.enums.Status;
-=======
-import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
-import com.compassuol.sp.challenge.msorders.enems.Status;
+
+import com.compassuol.sp.challenge.msorders.enums.PaymentMethod;
+import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.request.ProductServiceRequest;
->>>>>>> postOrder
+
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.EnumType;

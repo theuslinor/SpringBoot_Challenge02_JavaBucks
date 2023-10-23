@@ -2,20 +2,11 @@ package com.compassuol.sp.challenge.msorders.model.dto;
 
 import com.compassuol.sp.challenge.msorders.enums.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.enums.Status;
-import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-<<<<<<< HEAD
-import jakarta.persistence.JoinColumn;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import lombok.*;
-=======
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
->>>>>>> postOrder
 
 import java.time.LocalDateTime;
 

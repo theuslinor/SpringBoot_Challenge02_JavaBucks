@@ -2,21 +2,20 @@ package com.compassuol.sp.challenge.msorders.service;
 
 import com.compassuol.sp.challenge.msorders.client.ProductsFeign;
 import com.compassuol.sp.challenge.msorders.client.ViaCepFeign;
-<<<<<<< HEAD
+
 import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.exception.OrderNotFoundException;
 import com.compassuol.sp.challenge.msorders.exception.OrderUpdateNotAllowedException;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
-=======
-import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
-import com.compassuol.sp.challenge.msorders.enems.Status;
+
+import com.compassuol.sp.challenge.msorders.enums.PaymentMethod;
+import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.exception.OrderNotFoundException;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
 import com.compassuol.sp.challenge.msorders.model.request.OrderRequest;
 import com.compassuol.sp.challenge.msorders.model.request.ProductServiceRequest;
->>>>>>> postOrder
 import com.compassuol.sp.challenge.msorders.model.response.AddressClientResponse;
 import com.compassuol.sp.challenge.msorders.model.response.AdressClienteViaCepResponse;
 import com.compassuol.sp.challenge.msorders.model.response.OrderResponse;
@@ -33,38 +32,34 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-<<<<<<< HEAD
+
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-=======
->>>>>>> postOrder
+
 
 @Service
 @RequiredArgsConstructor
 public class OrderService {
 
     private final OrderRepository orderRepository;
-<<<<<<< HEAD
-=======
+
 
     private final AddressRepository addressRepository;
 
     private final ProductServiceRepository productServiceRepository;
 
->>>>>>> postOrder
-    private final OrderMapper orderMapper;
-    private final OrderDTOMapper orderDTOMapper;
     private final ViaCepFeign viaCepFeign;
 
-<<<<<<< HEAD
-    public AddressClientResponse searchCep(AddressClient addressClient) {
-        return viaCepFeign.searchLocationByCep(addressClient.getCep());
-=======
     private final ProductsFeign productsFeign;
 
-    public AdressClienteViaCepResponse searchCep(AddressClient addressClient){
+
+    private final OrderMapper orderMapper;
+    private final OrderDTOMapper orderDTOMapper;
+
+
+    public AdressClienteViaCepResponse searchCep(AddressClient addressClient) {
         return viaCepFeign.searchLocationByCep(addressClient.getZipCode());
     }
 
@@ -157,7 +152,6 @@ public class OrderService {
         orderRepository.save(orderCreate);
 
         return orderResponse;
->>>>>>> postOrder
     }
 
     public OrderDTO getOrderById(Long id) {

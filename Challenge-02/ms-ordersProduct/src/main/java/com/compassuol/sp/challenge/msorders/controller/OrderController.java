@@ -4,6 +4,7 @@ package com.compassuol.sp.challenge.msorders.controller;
 import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
+import com.compassuol.sp.challenge.msorders.model.request.OrderRequest;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.service.OrderService;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;
