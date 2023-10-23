@@ -79,9 +79,7 @@ public class OrderService {
         ProductService productServiceCreate = new ProductService();
         ProductService productService = productsFeign.getProductsById(orderRequest.getProductService().getId());
         if(addressClientViaCepResponse == null || productService.getId() == null){
-            //throw new OrderNotFoundException();
-//            ResponseEntity<OrderDTO> response = new ResponseEntity<>();
-//            return ;
+            throw new OrderNotFoundException();giy
         }
 
         productServiceCreate.setId(orderRequest.getProductService().getId());

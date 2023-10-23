@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="1f1a325f-52b3-4959-9baa-a21ec339e9b4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static.documents/openapi.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/banner.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barba.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barbearia_alura2.html" beforeDir="false" />
@@ -23,32 +24,6 @@
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style2.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/utensilios.jpg" beforeDir="false" />
-=======
-    <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/client/ProductsFeign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/response/AdressClienteViaCepResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/repository/AddressRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/repository/ProductServiceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/classes/com/compassuol/sp/challenge/msorders/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/test-classes/com/compassuol/sp/challenge/msorders/web/ProductControllerTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/test-classes/com/compassuol/sp/challenge/msorders/web/ProductControllerTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-orders/target/test-classes/com/compassuol/sp/challenge/msorders/web/ProductControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-orders/target/test-classes/com/compassuol/sp/challenge/msorders/web/ProductControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-ordersProduct.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-ordersProduct.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/client/ViaCepFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/client/ViaCepFeign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/request/AddressClientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/request/AddressClientRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/request/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/request/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/response/AddressClientResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/response/AddressClientResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/response/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/response/OrderResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/AddressClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/AddressClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/model/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
->>>>>>> postOrder
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,22 +41,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
-  }
-}</component>
-  <component name="RunManager">
-    <configuration name="MsOrdersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-=======
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -90,8 +49,8 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
+    &quot;associatedIndex&quot;: 5
+    }</component>
   <component name="ProjectId" id="2Wu5VxepFnEnrIDrnSyMeF6njuo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -99,11 +58,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/User/Desktop/Compass/week-8(challenge)/Nova pasta/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-orders",
+    "last_opened_file_path": "C:/Users/yasmim/Desktop/estudos/pastaGitHub/SpringBoot_Challenge02_JavaBucks/Challenge-02/ms-ordersProduct/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -111,15 +74,22 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-ordersProduct\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-ordersProduct\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.compassuol.sp.challenge.msorders.model.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MS-Product">
+  <component name="RunManager" selected="Spring Boot.MsOrdersApplication">
     <configuration name="MS-Product" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.compassuol.sp.challenge.msorders.MsOrdersApplication" />
       <module name="ms-orders" />
@@ -162,7 +132,6 @@
       </method>
     </configuration>
     <configuration name="MsOrdersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
->>>>>>> postOrder
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="ms-ordersProduct" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.compassuol.sp.challenge.msorders.MsOrdersApplication" />
@@ -177,28 +146,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="openapi.yaml" type="SwaggerCodegen" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="generateToPath" value="C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-ordersProduct\src\main\gen" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorType" value="OPENAPI_GENERATOR_V6" />
+      <option name="jdkPath" value="C:\Users\yasmim\AppData\Local\JetBrains\IntelliJ IDEA 2023.2.2\jbr\bin\java.exe" />
+      <option name="language" value="java" />
+      <option name="passParentEnvs" value="true" />
+      <option name="programParameters" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="specificationPath" value="C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-ordersProduct\src\main\resources\static.documents\openapi.yaml" />
+      <option name="workingDirectory" value="C:\Users\yasmim\Desktop\estudos\pastaGitHub\SpringBoot_Challenge02_JavaBucks\Challenge-02\ms-ordersProduct\src\main\resources\static.documents" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.MS-Product" />
       <item itemvalue="Application.Ms-order" />
       <item itemvalue="JUnit.MsOrdersApplicationTests" />
+      <item itemvalue="OpenAPI/Swagger Code Generator.openapi.yaml" />
+      <item itemvalue="Spring Boot.MsOrdersApplication" />
     </list>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
+        <item itemvalue="OpenAPI/Swagger Code Generator.openapi.yaml" />
         <item itemvalue="Spring Boot.MsOrdersApplication" />
-=======
         <item itemvalue="Application.MS-Product" />
         <item itemvalue="Application.Ms-order" />
         <item itemvalue="JUnit.MsOrdersApplicationTests" />
->>>>>>> postOrder
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <servers />
   </component>
-<<<<<<< HEAD
-=======
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
@@ -207,5 +198,4 @@
       <FILTER>com.compassuol.sp.challenge.msorders.*</FILTER>
     </SUITE>
   </component>
->>>>>>> postOrder
 </project>
