@@ -11,7 +11,7 @@ public class OrderDTOMapper {
 
         orderDTOCreate.setId(order.getId());
         orderDTOCreate.setProductId(order.getProductId());
-        //orderDTOCreate.setAddressId(order.getAddressId());
+        orderDTOCreate.setAddressId(order.getAddressId());
         orderDTOCreate.setPaymentMethod(order.getPaymentMethod());
         orderDTOCreate.setSubtotalValue(order.getSubtotalValue());
         orderDTOCreate.setDiscount(order.getDiscount());

@@ -21,3 +21,5 @@ Wsrc/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMap
 Tsrc/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java,8\2\82b7f8c8afafb1c17f57aa5b190f125f3b373773
 v
 Fsrc/main/java/com/compassuol/sp/challenge/msorders/entity/Product.java,a\f\af4f154e6785a0a8baf19abadacf8e2a72f900eb
+{
+Ksrc/main/java/com/compassuol/sp/challenge/msorders/MsOrdersApplication.java,c\e\ce74f68389a7e492aa5b01286c3eea63d7a2af13

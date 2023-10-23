@@ -7,6 +7,7 @@ import com.compassuol.sp.challenge.msorders.enems.Status;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
 import com.compassuol.sp.challenge.msorders.model.request.OrderRequest;
+import com.compassuol.sp.challenge.msorders.model.request.ProductServiceRequest;
 import com.compassuol.sp.challenge.msorders.model.response.AddressClientResponse;
 import com.compassuol.sp.challenge.msorders.model.response.AdressClienteViaCepResponse;
 import com.compassuol.sp.challenge.msorders.model.response.OrderResponse;
@@ -60,34 +61,36 @@ public class OrderService {
         ProductService productServiceCreate = new ProductService();
         ProductService productService = productsFeign.getProductsById(orderRequest.getProductService().getId());
 
-        productServiceCreate.setId(productService.getId());
+        productServiceCreate.setId(orderRequest.getProductService().getId());
         productServiceCreate.setQuantity(orderRequest.getProductService().getQuantity());
         productServiceCreate.setName(productService.getName());
         productServiceCreate.setValue(productService.getValue());
         productServiceCreate.setDescription(productService.getDescription());
 
-        System.out.println(productServiceCreate);
 
         OrderResponse orderResponse = new OrderResponse();
 
         orderResponse.setId(1L);
-        orderResponse.setProducts(productService);
+        orderResponse.setProducts(new ProductServiceRequest());
+        orderResponse.getProducts().setId(productServiceCreate.getId());
+        orderResponse.getProducts().setQuantity(productServiceCreate.getQuantity());
 
         orderResponse.setAddressClientResponse(addressClient);
-        orderResponse.setPayment_method(orderRequest.getPayment_method());
-        orderResponse.setSubtotal_value(productService.getValue());
+        orderResponse.setPaymentMethod(orderRequest.getPayment_method());
+        orderResponse.setSubtotalValue(productService.getValue());
         if(orderRequest.getPayment_method() == PaymentMethod.PIX){
             orderResponse.setDiscount(productService.getValue()*0.05);
         }else{
             orderResponse.setDiscount(0.0);
         }
-        orderResponse.setTotal_value(productService.getValue() - orderResponse.getDiscount());
-        orderResponse.setCreated_date(LocalDateTime.now());
+        orderResponse.setTotalValue(productService.getValue() - orderResponse.getDiscount());
+        orderResponse.setDate(LocalDateTime.now());
         orderResponse.setStatus(Status.CONFIRMED);
 
 
         AddressClient addressCreate = new AddressClient();
 
+        addressCreate.setId(100L);
         addressCreate.setStreet(orderRequest.getAddressClientRequest().getStreet());
         addressCreate.setNumber(orderRequest.getAddressClientRequest().getNumber());
         addressCreate.setComplement(addressClientViaCepResponse.getComplemento());
@@ -97,14 +100,14 @@ public class OrderService {
 
         OrderDTO orderCreateDTO = new OrderDTO();
 
-        orderCreateDTO.setId(addressCreate.getId());
+        orderCreateDTO.setId(1L);
         orderCreateDTO.setProductId(productService.getId());
-        orderCreateDTO.setAddressId(addressCreate);
+        orderCreateDTO.setAddressId(100L);
         orderCreateDTO.setPaymentMethod(orderRequest.getPayment_method());
-        orderCreateDTO.setSubtotalValue(orderResponse.getSubtotal_value());
+        orderCreateDTO.setSubtotalValue(orderResponse.getSubtotalValue());
         orderCreateDTO.setDiscount(orderResponse.getDiscount());
-        orderCreateDTO.setTotalValue(orderResponse.getTotal_value());
-        orderCreateDTO.setDate(orderResponse.getCreated_date());
+        orderCreateDTO.setTotalValue(orderResponse.getTotalValue());
+        orderCreateDTO.setDate(orderResponse.getDate());
         orderCreateDTO.setStatus(Status.CONFIRMED);
 
 
@@ -112,20 +115,19 @@ public class OrderService {
 
         orderCreate.setId(addressCreate.getId());
         orderCreate.setProductId(orderCreateDTO.getId());
-        orderCreate.setAddressId(addressCreate);
+        orderCreate.setAddressId(addressCreate.getId());
         orderCreate.setPaymentMethod(orderRequest.getPayment_method());
-        orderCreate.setSubtotalValue(orderResponse.getSubtotal_value());
+        orderCreate.setSubtotalValue(orderResponse.getSubtotalValue());
         orderCreate.setDiscount(orderResponse.getDiscount());
-        orderCreate.setTotalValue(orderResponse.getTotal_value());
-        orderCreate.setDate(orderResponse.getCreated_date());
+        orderCreate.setTotalValue(orderResponse.getTotalValue());
+        orderCreate.setDate(orderResponse.getDate());
         orderCreate.setStatus(Status.CONFIRMED);
 
 
-//        productServiceRepository.save(productServiceCreate);
-//        addressRepository.save(addressCreate);
-//        orderRepository.save(orderCreate);
-//
+        productServiceRepository.save(productServiceCreate);
+        addressRepository.save(addressCreate);
+        orderRepository.save(orderCreate);
 
-        return orderCreateDTO;
+        return orderResponse;
     }
 }

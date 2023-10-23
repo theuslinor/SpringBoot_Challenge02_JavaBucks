@@ -2,6 +2,8 @@ package com.compassuol.sp.challenge.msorders.model.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.*;
 
 @AllArgsConstructor
@@ -10,7 +12,7 @@ import lombok.*;
 @Setter
 @ToString
 public class AddressClientResponse {
-
+    @JsonIgnore
     private Long id;
 
     private String street;

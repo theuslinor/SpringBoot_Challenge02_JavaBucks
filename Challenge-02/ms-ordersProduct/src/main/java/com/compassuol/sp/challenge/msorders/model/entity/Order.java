@@ -27,11 +27,9 @@ public class Order {
     private Long productId;
 
     @NotNull
-    @ManyToOne
     @JoinColumn(name = "address_id")
-    private AddressClient addressId;
+    private Long addressId;
 
-    @NotBlank
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
@@ -47,7 +45,6 @@ public class Order {
     @NotNull
     private LocalDateTime date;
 
-    @NotBlank
     @Enumerated(EnumType.STRING)
     private Status status;
 

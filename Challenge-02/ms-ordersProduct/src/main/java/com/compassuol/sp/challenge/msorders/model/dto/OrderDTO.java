@@ -22,7 +22,7 @@ public class OrderDTO {
 
     private Long productId;
 
-    private AddressClient addressId;
+    private Long addressId;
 
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;

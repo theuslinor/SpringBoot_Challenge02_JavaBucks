@@ -2,7 +2,12 @@ package com.compassuol.sp.challenge.msorders.model.response;
 
 import com.compassuol.sp.challenge.msorders.enems.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.enems.Status;
+import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
+import com.compassuol.sp.challenge.msorders.model.request.ProductServiceRequest;
 import com.compassuol.sp.challenge.msorders.model.services.ProductService;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -12,31 +17,36 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class OrderResponse {
+public class OrderResponse extends OrderDTO{
 
-    private Long id;
-
-    private Long productId;
-
-    private Double discount;
-
-    private Double total_value;
-
-
-    private LocalDateTime created_date;
-
-    private Status status;
-
-    private ProductService products;
+    private ProductServiceRequest products;
 
     private AddressClientResponse addressClientResponse;
 
-    private PaymentMethod payment_method;
+    private PaymentMethod paymentMethod;
 
-    private Double subtotal_value;
+    private Double subtotalValue;
 
+    private Double discount;
 
+    private Double totalValue;
 
+    private LocalDateTime date;
 
+    private Status status;
 
+    @JsonIgnore
+    private String cancelReason;
+
+    @JsonIgnore
+    private String cancelDate;
+
+    @JsonIgnore
+    private Long id;
+
+    @JsonIgnore
+    private Long productId;
+
+    @JsonIgnore
+    private Long addressId;
 }
