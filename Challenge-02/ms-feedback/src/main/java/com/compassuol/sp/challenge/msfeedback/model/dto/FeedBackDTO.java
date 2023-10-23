@@ -20,6 +20,6 @@ public class FeedBackDTO {
     private String comment;
 
     @NotBlank
-    private Long order_id;
+    private Long orderId;
 
 }

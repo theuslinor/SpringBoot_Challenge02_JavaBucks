@@ -13,7 +13,7 @@ public class FeedbackDTOMapper {
         feedBackCreateDTO.setId(feedBack.getId());
         feedBackCreateDTO.setScale(feedBack.getScale());
         feedBackCreateDTO.setComment(feedBack.getComment());
-        feedBackCreateDTO.setOrder_id(feedBack.getOrder_id());
+        feedBackCreateDTO.setOrderId(feedBack.getOrderId());
 
         return feedBackCreateDTO;
     }

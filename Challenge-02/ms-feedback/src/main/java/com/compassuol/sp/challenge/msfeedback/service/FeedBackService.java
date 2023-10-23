@@ -1,5 +1,6 @@
 package com.compassuol.sp.challenge.msfeedback.service;
 
+import com.compassuol.sp.challenge.msfeedback.exception.FeedBackNotFoundException;
 import com.compassuol.sp.challenge.msfeedback.model.dto.FeedBackDTO;
 import com.compassuol.sp.challenge.msfeedback.model.entity.FeedBack;
 import com.compassuol.sp.challenge.msfeedback.repository.FeedBackRepository;
@@ -7,6 +8,9 @@ import com.compassuol.sp.challenge.msfeedback.service.mapper.FeedBackMapper;
 import com.compassuol.sp.challenge.msfeedback.service.mapper.FeedbackDTOMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -20,8 +24,26 @@ public class FeedBackService {
 
 
     public FeedBackDTO createFeedBack(FeedBackDTO productRequestDTO){
+
         FeedBack product = feedBackMapper.createFeedBack(productRequestDTO);
         FeedBack productResponse = feedBackRepository.save(product);
         return feedbackDTOMapper.createFeedBackDTO(productResponse);
+    }
+    public FeedBackDTO getFeedbackById(Long id) {
+        FeedBack feedBack= feedBackRepository.findById(id)
+        .orElseThrow(() -> new FeedBackNotFoundException());
+        return feedbackDTOMapper.createFeedBackDTO(feedBack);
+    }
+
+    public List<FeedBackDTO> getAll() {
+
+        List<FeedBack> feedBackList = feedBackRepository.findAll();
+        List<FeedBackDTO> feedBackDTOList = new ArrayList<>();
+
+        for (FeedBack feedBack : feedBackList) {
+            FeedBackDTO feedBackDTO = feedbackDTOMapper.createFeedBackDTO(feedBack);
+            feedBackDTOList.add(feedBackDTO);
+        }
+        return feedBackDTOList;
     }
 }

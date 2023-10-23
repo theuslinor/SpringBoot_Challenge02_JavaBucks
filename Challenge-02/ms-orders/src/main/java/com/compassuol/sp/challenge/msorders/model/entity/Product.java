@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.entity;
+package com.compassuol.sp.challenge.msorders.model.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
