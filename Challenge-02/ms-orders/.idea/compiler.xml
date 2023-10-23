@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ms-ordersProduct" />
-        <module name="ms-orders" />
         <module name="ms-feedback" />
       </profile>
     </annotationProcessing>
