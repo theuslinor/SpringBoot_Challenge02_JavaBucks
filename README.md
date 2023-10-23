@@ -1,8 +1,8 @@
 
  <h1 align="center">  
-    	<img src = "https://github.com/theuslinor/SpringBoot_Challenge02_JavaBucks/assets/128644651/38212ca4-1ad3-4240-84ad-975ac706bd64" style="margin-top: 10px; height: 300px; width: 300px; border-radius: 10px" ">
-	<p>Java Bucks</p>
-</h1> 
+    <img src = "https://github.com/theuslinor/SpringBoot_Challenge02_JavaBucks/assets/128644651/38212ca4-1ad3-4240-84ad-975ac706bd64" style="margin-top: 10px; height: 300px; width: 300px ">
+		<p>Java Bucks</p>
+	</h1> 
  <h1>About the challenge ☕🎮</h1>
 
 Status: finished ✅
