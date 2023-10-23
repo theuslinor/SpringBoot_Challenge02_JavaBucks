@@ -194,9 +194,9 @@ public class OrderService {
     public OrderDTO cancelOrder(Long orderId, OrderDTO orderDTO) {
         Order existingOrder = orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
 
-//        if (existingOrder.getStatus() != Status.SENT) {
-//            throw new OrderUpdateNotAllowedException();
-//        }
+        if (existingOrder.getStatus() == Status.SENT || existingOrder.getStatus() == Status.CANCELED) {
+            throw new OrderUpdateNotAllowedException();
+        }
 
         LocalDateTime creationDate = existingOrder.getDate();
         LocalDateTime currentDate = LocalDateTime.now(ZoneOffset.UTC);
