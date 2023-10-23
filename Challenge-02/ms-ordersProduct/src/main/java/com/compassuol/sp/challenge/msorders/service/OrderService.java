@@ -183,12 +183,31 @@ public class OrderService {
 
         if (existingOrder.getStatus() == Status.CONFIRMED) {
             existingOrder.setStatus(newStatus);
-            existingOrder.setCancelDate(LocalDateTime.now(ZoneOffset.UTC).toString());
-            existingOrder.setCancelReason(cancelReason);
+            orderRepository.save(existingOrder);
         } else {
             throw new OrderUpdateNotAllowedException();
         }
 
+        return orderDTOMapper.createOrderDTO(existingOrder);
+    }
+
+    public OrderDTO cancelOrder(Long orderId, OrderDTO orderDTO) {
+        Order existingOrder = orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
+
+//        if (existingOrder.getStatus() != Status.SENT) {
+//            throw new OrderUpdateNotAllowedException();
+//        }
+
+        LocalDateTime creationDate = existingOrder.getDate();
+        LocalDateTime currentDate = LocalDateTime.now(ZoneOffset.UTC);
+        if (creationDate.plusDays(90).isBefore(currentDate)) {
+            throw new OrderUpdateNotAllowedException();
+        }
+
+        existingOrder.setStatus(Status.CANCELED);
+        existingOrder.setCancelDate(currentDate.toString());
+        existingOrder.setCancelReason(orderDTO.getCancelReason());
+        orderRepository.save(existingOrder);
         return orderDTOMapper.createOrderDTO(existingOrder);
     }
 }

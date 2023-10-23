@@ -8,6 +8,7 @@ import com.compassuol.sp.challenge.msorders.model.request.OrderRequest;
 import com.compassuol.sp.challenge.msorders.model.services.AddressClient;
 import com.compassuol.sp.challenge.msorders.service.OrderService;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,6 +54,12 @@ public class OrderController {
                                                 @RequestBody OrderDTO updatedOrderDTO) {
         OrderDTO updatedOrder = orderService.updateOrder(id, updatedOrderDTO.getStatus(), updatedOrderDTO.getCancelReason());
         return ResponseEntity.ok(updatedOrder);
+    }
+
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<OrderDTO> cancelOrder(@PathVariable Long id, @RequestBody OrderDTO orderDTO) {
+        OrderDTO canceledOrder = orderService.cancelOrder(id, orderDTO);
+        return ResponseEntity.ok(canceledOrder);
     }
 }
 
