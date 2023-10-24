@@ -102,44 +102,55 @@ The Order functionality allows users to order products from a catalog. An order 
 
 
 
-Example: Order list.
+### Example: Order list.
 #### curl --location --request GET '(http://localhost:8081/orders)'
-```bash
-	{
-		Developer, paste your command here📜
-	}
-```
 
-Example: Search order.
-#### curl --location --request GET '(http://localhost:8081/orders/5)'
-```bash
-	{
-		Developer, paste your command here📜
-	}
-```
+>  Get All, returns all items in the order list, from newest to oldest.
+>  You can also filter by status, setting the status as a parameter and in UPPERCASE, for example:
 
-Example: Register order
+ ![image](https://github.com/theuslinor/SpringBoot_Challenge02_JavaBucks/assets/131717895/5d7fdc85-23a8-4da8-bc58-243e39d857ea)
+
+
+
+### Example: Search order.
+#### curl --location --request GET '(http://localhost:8081/orders/{id})'
+> To select by Id, simply pass the Id in the URL.
+
+
+### Example: Register order
 #### curl --location --request POST '(http://localhost:8081/orders)'
 ```bash
-	{
-		Developer, paste your command here📜
-	}
+
+--data
+'{
+  "productService": {
+    "id": 2,
+    "quantity": 2
+  },
+  "addressClientRequest": {
+    "street": "Rua da Amostra2",
+    "number": 101,
+    "zipCode": "44090480"
+  },
+  "payment_method": "PIX"
+}'
 ```
 
-Example: Update order.
+### Example: Update order.
 #### curl --location --request PUT '(http://localhost:8081/orders/5)'
 ```bash
-	{
-		Developer, paste your command here📜
-	}
+{
+    "status": "CANCELED",
+    "cancelReason": "cancelReason"
+}
 ```
 
-Example: Cancel order.
-#### curl --location --request POST '(http://localhost:8081/orders/5/cancel)'
+### Example: Cancel order.
+#### curl --location --request POST '(http://localhost:8081/orders/{id}/cancel)'
 ```bash
-	{
-		Developer, paste your command here📜
-	}
+{
+  "cancelReason": "reason for cancellation"
+}
 ```
 
  ## Tools 🔨
