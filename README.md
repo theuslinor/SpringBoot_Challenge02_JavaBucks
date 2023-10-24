@@ -80,12 +80,6 @@ After the "Products/" ID is used to capture, the product with that specific ID a
 	}
 ```
 
-
- ## Tools 🔨
- - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
- - [Spring Boot](https://start.spring.io/)
- - [MySQL](https://www.mysql.com/downloads/)
-
 <h1> Orders ☕🎮</h1>
 
 The Order functionality allows users to order products from a catalog. An order consists of a **list of products**, a **delivery address** and a **payment method**.
@@ -156,6 +150,55 @@ The Order functionality allows users to order products from a catalog. An order 
   "cancelReason": "reason for cancellation"
 }
 ```
+<h1> Feedback ☕🎮</h1>
+
+Feedback functionality allows users to leave feedback on services and products, a feedback is composed of a satisfaction scale, a comment, and the order id informed.
+
+**Operations:**
+
+| Methods | URL | Description |
+|--------:|-------------------|-------------|
+|GET      |/feedbacks         |Returns the list of feedbacks.
+|GET      |/feedbacks/:id     |Returns information from a specific feedback by ID.|
+|POST     |/feedbacks         |Create a new feedback.|
+|PUT      |/feedbacks:id      |Updates information about an existing feedback.|
+|DELETE   |/feedbacks/:id     |Cancel order: Cancels an existing feedback.|
+
+
+### Example: Feedback list.
+#### curl --location --request GET '(http://localhost:8083/feedbacks)'
+
+>  Get All, returns all items in the feedback list.
+
+### Example: Search order.
+#### curl --location --request GET '(http://localhost:8083/feedbacks/{id})'
+> To select by Id, simply pass the Id in the URL.
+
+### Example: Register feedback 
+#### curl --location --request POST '(http://localhost:8083/feedbacks)'
+```bash
+
+--data
+'{
+   "scale": "SATISFIED"
+    "comment": "Comment here",
+    "order_id": 1
+}'
+```
+
+### Example: Update order.
+#### curl --location --request PUT '(http://localhost:8083/feedbacks/{id})'
+```bash
+
+--data
+'{
+   "scale": "SATISFIED",
+    "comment": "Comment here"
+}'
+```
+
+### Example: Delete Feedback.
+#### curl --location --request DELETE '(http://localhost:8083/feedbacks/{id})'
 
  ## Tools 🔨
  - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
