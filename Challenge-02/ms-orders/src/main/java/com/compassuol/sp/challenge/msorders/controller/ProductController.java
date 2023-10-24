@@ -1,6 +1,6 @@
 package com.compassuol.sp.challenge.msorders.controller;
 
-import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
+import com.compassuol.sp.challenge.msorders.model.dto.ProductDTO;
 import com.compassuol.sp.challenge.msorders.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

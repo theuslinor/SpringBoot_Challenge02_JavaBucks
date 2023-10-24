@@ -1,7 +1,7 @@
 package com.compassuol.sp.challenge.msorders.common;
 
-import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
-import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.model.dto.ProductDTO;
+import com.compassuol.sp.challenge.msorders.model.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;

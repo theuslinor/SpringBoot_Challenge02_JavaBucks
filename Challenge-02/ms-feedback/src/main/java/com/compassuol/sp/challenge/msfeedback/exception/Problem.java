@@ -22,4 +22,10 @@ public class Problem {
         this.status = errorCode.name();
         this.message = errorCode.getMessage();
     }
+
+    public Problem(ErrorCode errorCode){
+        this.code = HttpStatus.INTERNAL_SERVER_ERROR.value();
+        this.status = errorCode.name();
+        this.message = errorCode.getMessage();
+    }
 }

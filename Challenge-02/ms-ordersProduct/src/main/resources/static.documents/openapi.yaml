@@ -1,0 +1,311 @@
+openapi: 3.0.3
+info:
+  title: Order service api
+  description: |
+    - [Order API allows user: register, update, select by status, by id]
+  version: 1.0
+
+servers:
+  - url: "http://localhost:8081"
+    description: Generated server url
+paths:
+ /orders:
+  get:
+      summary: List of orders
+      operationId: getAllOrder
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderDTO'
+              example:
+                - id: 5
+                  productService:
+                   id: 5
+                   quantity: 8
+                   name: "Product 5"
+                   value: 22.99
+                   description: "Descrição do Produto 5"
+                - address:
+                  id: 105
+                  street: Estrada Modelo 5
+                  number: 5005
+                  cep: 99999-999
+                - paymentMethod: "GIFT_CARD"
+                  subtotal_value: 60.0
+                  discount: 12.0
+                  total_value: null
+                  date: 2023-10-20T21:38:17.6232025
+                  status: CONFIRMED
+                  cancelReason: null
+                  cancelDate: null
+                - id: 4
+                  productService:
+                    id: 4
+                    quantity: 15
+                    name: "Product 4"
+                    value: 28.75
+                    description: "Descrição do Produto 4"
+                - address:
+                  id: 104
+                  street: Estrada Modelo 4
+                  number: 4004
+                  cep: 11111-111
+                - paymentMethod: "CRYPTOCURRENCY"
+                  subtotal_value: 40.0
+                  discount: 8.0
+                  total_value: null
+                  date: 2023-10-20T21:38:17.6232025
+                  status: CONFIRMED
+                  cancelReason: null
+                  cancelDate: null
+
+
+        '404':
+          description: not found
+
+
+  post:
+      summary: Add a new Order to the database
+      operationId: creatOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productService:
+                  type: object
+                id:
+                  type: integer
+                quantity:
+                  type: integer
+                addressClientRequest:
+                  type: object
+                street:
+                  type: string
+                number:
+                  type: integer
+                zipCode:
+                  type: integer
+                payment_method:
+                 type: string
+
+            example:
+              - productService:
+                  id: 5
+                  quantity: 8
+              - address:
+                street: Estrada Modelo 5
+                number: 5005
+                zipCode: 99999-999
+              - paymentMethod: "GIFT_CARD"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            "*/*":
+              schema:
+                $ref: '#/components/schemas/OrderDTO'
+        '400':
+          description: Bad Request
+
+
+ /orders/{Id}:
+  get:
+     summary: Find orders by ID
+     description: Returns a single order
+     operationId: getOrdersById
+     parameters:
+       - name: Order Id
+         in: path
+         description: ID of order to return
+         required: true
+         schema:
+            type: integer
+            format: int64
+     responses:
+         '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/OrderDTO'
+                example:
+                  - id: 5
+                    productService:
+                      id: 5
+                      quantity: 8
+                      name: "Product 5"
+                      value: 22.99
+                      description: "Descrição do Produto 5"
+                  - address:
+                    id: 105
+                    street: Estrada Modelo 5
+                    number: 5005
+                    cep: 99999-999
+                  - paymentMethod: "GIFT_CARD"
+                    subtotal_value: 60.0
+                    discount: 12.0
+                    total_value: null
+                    date: 2023-10-20T21:38:17.6232025
+                    status: CONFIRMED
+                    cancelReason: null
+                    cancelDate: null
+
+         '400':
+            description: bad Request
+         '404':
+           description: not found
+
+
+  put:
+      summary: Updates a order
+      operationId: updateOrder
+      requestBody:
+         content:
+           application/json:
+             schema:
+               type: object
+               properties:
+                 status:
+                   type: string
+                   description: status of the order
+                 cancelReason:
+                   type: string
+                   description: cancellation reason
+
+      parameters:
+        - name: order Id
+          in: path
+          description: ID of the order that needs to be updated, passed in the url
+          required: true
+          schema:
+            type: integer
+            format: int64
+
+
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: not found
+
+        '400':
+          description: bad request
+
+ /orders/{Id}/cancel:
+   post:
+     summary: Cancel an existing order
+     operationId: cancelOrder
+     requestBody:
+       content:
+         application/json:
+           schema:
+             type:
+
+           example:
+               cancelReason: "reason for cancellation"
+       required: true
+     responses:
+       '200':
+         description: OK
+         content:
+           "*/*":
+             schema:
+               $ref: '#/components/schemas/OrderDTO'
+       '400':
+         description: bad Request
+       '404':
+         description: not found
+
+
+
+components:
+  schemas:
+    ProductService:
+      required:
+        - quantity,
+        - name,
+        - value
+        - description
+      type: object
+      properties:
+        quantity:
+          type: integer
+        name:
+          type: string
+        value:
+          type: number
+        description:
+          type: string
+
+    AddressClient:
+      required:
+        - street,
+        - number,
+        - cep
+      type: object
+      properties:
+        street:
+          type: string
+        number:
+          type: integer
+        cep:
+          type: string
+
+    PaymentMethod:
+      type: string
+      enum:
+        - CREDIT_CARD
+        - BANK_TRANSFER
+        - CRYPTOCURRENCY
+        - GIFT_CARD
+        - PIX
+        - OTHER
+
+    Status:
+      type: string
+      enum:
+        - CONFIRMED
+        - SENT
+        - CANCELED
+        -  DELIVERED
+
+    OrderDTO:
+      required:
+        - ProductService
+        - AddressClient
+        - PaymentMethod
+        - subtotal_value
+        - discount
+        - total_value
+        - Status
+        - cancelReason
+        - cancelDate
+      type: object
+      properties:
+        ProductService:
+          type: object
+        AddressClient:
+          type: object
+        PaymentMethod:
+          type: object
+        subtotal_value:
+          type: number
+        discount:
+          type: number
+        total_value:
+          type: number
+        Status:
+          type: object
+        cancelReason:
+          type: string
+        cancelData:
+          type: string

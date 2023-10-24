@@ -12,7 +12,7 @@ public class FeedBackMapper {
         feedBackCreate.setId(feedBack.getId());
         feedBackCreate.setScale(feedBack.getScale());
         feedBackCreate.setComment(feedBack.getComment());
-        feedBackCreate.setOrder_id(feedBack.getOrder_id());
+        feedBackCreate.setOrderId(feedBack.getOrderId());
 
         return feedBackCreate;
     }

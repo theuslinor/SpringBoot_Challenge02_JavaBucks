@@ -1,7 +1,7 @@
 package com.compassuol.sp.challenge.msorders.service;
 
-import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
-import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.model.dto.ProductDTO;
+import com.compassuol.sp.challenge.msorders.model.entity.Product;
 import com.compassuol.sp.challenge.msorders.exception.ProductNotFoundException;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
@@ -18,9 +18,9 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public ProductMapper productMapper;
+    public final ProductMapper productMapper;
 
-    public ProductDTOMapper productDTOMapper;
+    public final ProductDTOMapper productDTOMapper;
 
     public List<ProductDTO> getAll() {
         List<Product> productList = productRepository.findAll();

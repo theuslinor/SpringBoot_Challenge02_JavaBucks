@@ -1,6 +1,6 @@
 package com.compassuol.sp.challenge.msorders.repository;
 
-import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.model.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

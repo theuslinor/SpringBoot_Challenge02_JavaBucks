@@ -1,4 +1,4 @@
-package com.compassuol.sp.challenge.msorders.dto;
+package com.compassuol.sp.challenge.msorders.model.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
