@@ -64,7 +64,7 @@ After the "Products/" ID is used to capture, the product with that specific ID a
 Example of how to post a product from the database by id using POST:
   ```bash
 {
-	"name": "name",
+  "name": "name",
   "value": 30.00,
   "description": "Embarque em uma épica jornada de caça a monstros. Escolhas impactam o destino neste RPG imersivo."
 }
@@ -74,7 +74,7 @@ Example of how to put a product from the database by id using PUT:
 #### curl --location --request PUT '(http://localhost:8080/products/5)'
   ```bash
 {
-	"name": "name",
+  "name": "name",
   "value": 30.00,
   "description": "Embarque em uma épica jornada de caça a monstros. Escolhas impactam o destino neste RPG imersivo."
 }

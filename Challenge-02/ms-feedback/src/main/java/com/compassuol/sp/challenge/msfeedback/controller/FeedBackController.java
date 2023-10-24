@@ -38,4 +38,15 @@ public class FeedBackController {
 
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<FeedBackDTO> updateFeedBack(@PathVariable Long id, @RequestBody FeedBackDTO feedBackDTO) {
+        feedBackService.updateFeedBack(id, feedBackDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<FeedBackDTO> deleteFeedBack(@PathVariable Long id) {
+        feedBackService.deleteFeedBack(id);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -61,4 +61,21 @@ public class FeedBackService {
         }
         return feedBackDTOList;
     }
+
+    public FeedBackDTO updateFeedBack(Long id, FeedBackDTO feedBackDTO) {
+        FeedBack existingFeedBack = feedBackRepository.findById(id)
+                .orElseThrow(() -> new FeedBackNotFoundException());
+
+        existingFeedBack.setScale(feedBackDTO.getScale());
+        existingFeedBack.setComment(feedBackDTO.getComment());
+        feedBackRepository.save(existingFeedBack);
+
+        return feedbackDTOMapper.createFeedBackDTO(existingFeedBack);
+    }
+
+    public void deleteFeedBack(Long id) {
+        FeedBack existingFeedBack = feedBackRepository.findById(id)
+                .orElseThrow(() -> new FeedBackNotFoundException());
+        feedBackRepository.delete(existingFeedBack);
+    }
 }
