@@ -132,10 +132,10 @@ The Order functionality allows users to order products from a catalog. An order 
 ```
 
 ### Example: Update order.
-#### curl --location --request PUT '(http://localhost:8081/orders/5)'
+#### curl --location --request PUT '(http://localhost:8081/orders/{id})'
 ```bash
 {
-    "status": "CANCELED"
+   "status": "CANCELED"
 }
 ```
 

@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="">
+
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/compassuol/sp/challenge/msorders/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static.documents/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static.documents/openapi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/banner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barba.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/barbearia_alura2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/beneficios.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/cabelo+barba.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/cabelo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/contato.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/logo-branco.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/produtos.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style-home.css.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/style2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../barbearia alura/Barbearia_Alura/utensilios.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +175,15 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f8fed0f-2a14-408b-a18f-690f4d2c688f" name="Changes" comment="" />
+      <created>1698099596991</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698099596991</updated>
+      <workItem from="1698099601331" duration="537000" />
+      <workItem from="1698101120314" duration="221000" />
+    </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

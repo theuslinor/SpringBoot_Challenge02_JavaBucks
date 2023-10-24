@@ -41,4 +41,10 @@ public class ApiExceptionHandler {
         var problem = new Problem(ErrorCode.NOT_FOUND, HttpStatus.NOT_FOUND);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
     }
+
+    @ExceptionHandler(Exception.class)
+    public final ResponseEntity<Object> handlerAllExceptions(){
+        var problem = new Problem(ErrorCode.SYSTEM_ERROR);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(problem);
+    }
 }

@@ -1,7 +1,7 @@
 package com.compassuol.sp.challenge.msorders.service;
 
-import com.compassuol.sp.challenge.msorders.dto.ProductDTO;
-import com.compassuol.sp.challenge.msorders.entity.Product;
+import com.compassuol.sp.challenge.msorders.model.dto.ProductDTO;
+import com.compassuol.sp.challenge.msorders.model.entity.Product;
 import com.compassuol.sp.challenge.msorders.exception.ProductNotFoundException;
 import com.compassuol.sp.challenge.msorders.repository.ProductRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.ProductDTOMapper;
