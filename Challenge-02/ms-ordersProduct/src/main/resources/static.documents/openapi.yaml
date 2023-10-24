@@ -176,9 +176,6 @@ paths:
                  status:
                    type: string
                    description: status of the order
-                 cancelReason:
-                   type: string
-                   description: cancellation reason
 
       parameters:
         - name: order Id
