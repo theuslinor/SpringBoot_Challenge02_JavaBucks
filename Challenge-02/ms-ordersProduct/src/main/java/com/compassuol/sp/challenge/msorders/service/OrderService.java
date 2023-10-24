@@ -2,16 +2,10 @@ package com.compassuol.sp.challenge.msorders.service;
 
 import com.compassuol.sp.challenge.msorders.client.ProductsFeign;
 import com.compassuol.sp.challenge.msorders.client.ViaCepFeign;
-
-import com.compassuol.sp.challenge.msorders.enums.Status;
-import com.compassuol.sp.challenge.msorders.exception.OrderNotFoundException;
-import com.compassuol.sp.challenge.msorders.exception.OrderUpdateNotAllowedException;
-import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
-import com.compassuol.sp.challenge.msorders.model.entity.Order;
-
 import com.compassuol.sp.challenge.msorders.enums.PaymentMethod;
 import com.compassuol.sp.challenge.msorders.enums.Status;
 import com.compassuol.sp.challenge.msorders.exception.OrderNotFoundException;
+import com.compassuol.sp.challenge.msorders.exception.OrderUpdateNotAllowedException;
 import com.compassuol.sp.challenge.msorders.model.dto.OrderDTO;
 import com.compassuol.sp.challenge.msorders.model.entity.Order;
 import com.compassuol.sp.challenge.msorders.model.request.OrderRequest;
@@ -27,12 +21,9 @@ import com.compassuol.sp.challenge.msorders.repository.ProductServiceRepository;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderDTOMapper;
 import com.compassuol.sp.challenge.msorders.service.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -79,7 +70,7 @@ public class OrderService {
         ProductService productServiceCreate = new ProductService();
         ProductService productService = productsFeign.getProductsById(orderRequest.getProductService().getId());
         if(addressClientViaCepResponse == null || productService.getId() == null){
-            throw new OrderNotFoundException();giy
+            throw new OrderNotFoundException();
         }
 
         productServiceCreate.setId(orderRequest.getProductService().getId());
