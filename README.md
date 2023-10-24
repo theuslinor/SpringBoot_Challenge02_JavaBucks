@@ -135,8 +135,7 @@ The Order functionality allows users to order products from a catalog. An order 
 #### curl --location --request PUT '(http://localhost:8081/orders/5)'
 ```bash
 {
-    "status": "CANCELED",
-    "cancelReason": "cancelReason"
+    "status": "CANCELED"
 }
 ```
 
