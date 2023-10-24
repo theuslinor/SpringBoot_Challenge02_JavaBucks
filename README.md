@@ -13,18 +13,18 @@ Status: finished ✅
 + nulls are not saved in the database !
 >
 
-The fields used in the Entity class are:
+### The fields used in the Entity class are:
 + Id
 + name
 + value
 + description
 >
-To add a product you need to fill in the following fields:
+### To add a product you need to fill in the following fields:
 + name
 + value
 + description
 >
-Example of how to add products to the database using POST:
+### Example of how to add products to the database using POST:
 curl --location 'http://localhost:8080/products' \
 --data
 ```bash
@@ -35,7 +35,7 @@ curl --location 'http://localhost:8080/products' \
 	}
 ```
 >
-Example of how to update products in the database using PUT:
+### Example of how to update products in the database using PUT:
 curl --location 'http://localhost:8080/products/5' \
 >
 --data '
@@ -48,20 +48,20 @@ curl --location 'http://localhost:8080/products/5' \
 ```  
 
 >
-Example of how to get all products registered:
+### Example of how to get all products registered:
 >
 #### curl --location --request GET '(http://localhost:8080/products)' 
 
-Example of how to get product from the database by id using GET:
+### Example of how to get product from the database by id using GET:
 #### curl --location --request GET '(http://localhost:8080/products/5)'
 >
-Example of how to delete a product from the database by id using DELETE:
+### Example of how to delete a product from the database by id using DELETE:
 #### curl --location --request DELETE '(http://localhost:8080/products/5)'
 
 After the "Products/" ID is used to capture, the product with that specific ID and perform the desired operation.
 
 
-Example of how to post a product from the database by id using POST:
+### Example of how to post a product from the database by id using POST:
 ```bash
 	{
 		"name": "name",
@@ -70,7 +70,7 @@ Example of how to post a product from the database by id using POST:
 	}
 ```
 
-Example of how to put a product from the database by id using PUT:
+### Example of how to put a product from the database by id using PUT:
 #### curl --location --request PUT '(http://localhost:8080/products/5)'
 ```bash
 	{
@@ -107,6 +107,7 @@ The Order functionality allows users to order products from a catalog. An order 
 
 >  Get All, returns all items in the order list, from newest to oldest.
 >  You can also filter by status, setting the status as a parameter and in UPPERCASE, for example:
+> + NOTE: The available statuses are: SENT, CONFIRMED, CANCELED, DELIVERED.
 
  ![image](https://github.com/theuslinor/SpringBoot_Challenge02_JavaBucks/assets/131717895/5d7fdc85-23a8-4da8-bc58-243e39d857ea)
 
