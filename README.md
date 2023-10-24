@@ -148,6 +148,9 @@ The Order functionality allows users to order products from a catalog. An order 
 
 ### Example: Cancel order.
 #### curl --location --request POST '(http://localhost:8081/orders/{id}/cancel)'
+> + An order can only be canceled if the status is other than SENT.
+> + An order cannot be cancelled if it is more than 90 days old.
+> 
 ```bash
 {
   "cancelReason": "reason for cancellation"
