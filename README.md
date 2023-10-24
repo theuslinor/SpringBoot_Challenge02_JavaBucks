@@ -181,7 +181,7 @@ Feedback functionality allows users to leave feedback on services and products, 
 '{
    "scale": "SATISFIED"
     "comment": "Comment here",
-    "order_id": 1
+    "orderId": 1
 }'
 ```
 
