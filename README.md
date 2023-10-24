@@ -202,6 +202,5 @@ Feedback functionality allows users to leave feedback on services and products, 
 
  ## Tools 🔨
  - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
- - [Spring Boot](https://start.spring.io/)
+ - [Spring Boot 3.0](https://start.spring.io/)
  - [MySQL](https://www.mysql.com/downloads/)
- - [Postman](https://www.postman.com/downloads/)
