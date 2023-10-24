@@ -3,8 +3,6 @@
 Tsrc/main/java/com/compassuol/sp/challenge/msorders/controller/ProductController.java,f\6\f64f1cfba06edc51f745717ef24a0ef079d81b63
 Ä
 Psrc/test/java/com/compassuol/sp/challenge/msorders/MsOrdersApplicationTests.java,3\d\3d6f05fb0ae0b3908617d34ca06518012119417d
-v
-Fsrc/main/java/com/compassuol/sp/challenge/msorders/dto/ProductDTO.java,8\7\87c41aeef1fb1b7d77e6865b3bcc572095b1737d
 ~
 Nsrc/main/java/com/compassuol/sp/challenge/msorders/service/ProductService.java,7\2\729760f48e05ff6d776a8439a2c83970a18888cc
 Å
@@ -19,7 +17,15 @@ Usrc/main/java/com/compassuol/sp/challenge/msorders/exception/ApiExceptionHandle
 Wsrc/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductDTOMapper.java,8\9\896ab8ce5d909d98649844dfb22acacb5eb9b3e7
 Ñ
 Tsrc/main/java/com/compassuol/sp/challenge/msorders/service/mapper/ProductMapper.java,8\2\82b7f8c8afafb1c17f57aa5b190f125f3b373773
-v
-Fsrc/main/java/com/compassuol/sp/challenge/msorders/entity/Product.java,a\f\af4f154e6785a0a8baf19abadacf8e2a72f900eb
 {
 Ksrc/main/java/com/compassuol/sp/challenge/msorders/MsOrdersApplication.java,c\e\ce74f68389a7e492aa5b01286c3eea63d7a2af13
+Ñ
+Tsrc/main/java/com/compassuol/sp/challenge/msorders/repository/ProductRepository.java,6\e\6ec06a01a82adf469ca7df7895556b6292b0b860
+y
+Isrc/main/java/com/compassuol/sp/challenge/msorders/exception/Problem.java,9\3\931af710932b7c0f56d66bf59d18de90578878e3
+{
+Ksrc/main/java/com/compassuol/sp/challenge/msorders/exception/ErrorCode.java,5\0\507b5cd59cadd2e333ce657c2437baf68c0e9f81
+|
+Lsrc/main/java/com/compassuol/sp/challenge/msorders/model/entity/Product.java,4\0\40d98ec2751597243d6b8393ecd6342eee1dd251
+ä
+Zsrc/main/java/com/compassuol/sp/challenge/msorders/exception/ProductNotFoundException.java,3\b\3bb4ffaca8aec2c5b32224696b01b14168340cd6

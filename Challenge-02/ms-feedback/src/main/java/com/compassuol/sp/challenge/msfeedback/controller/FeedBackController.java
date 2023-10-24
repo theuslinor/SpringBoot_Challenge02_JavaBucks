@@ -13,7 +13,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/feedback")
+@RequestMapping("/feedbacks")
 public class FeedBackController {
 
     private final FeedBackService feedBackService;

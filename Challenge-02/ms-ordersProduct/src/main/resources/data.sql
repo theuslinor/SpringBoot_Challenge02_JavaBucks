@@ -17,7 +17,6 @@ VALUES
 INSERT INTO order_tb (cancel_date, cancel_reason, date, discount, payment_method, `status`, subtotal_value, total_value, address_id, product_id)
 VALUES
 (NULL, NULL, '2023-10-18 08:30:00.123', 0.0, 'CREDIT_CARD', 'CONFIRMED', 29.98, 29.98, 101, 1),
-(NULL, NULL, '2023-10-16', 'Defective', '2023-10-19 14:45:00.456', 0, 'OTHER', 'CANCELED', 0, 0, 102, 2),
 (NULL, NULL, '2022-10-20 10:15:00.789', 0.0, 'PIX', 'SENT',  39.99,  39.99, 103, 3),
 (NULL, NULL, '2023-10-21 09:00:00.234', 0.0, 'CRYPTOCURRENCY', 'CONFIRMED', 59.99, 59.99, 104, 4),
 (NULL, NULL, '2023-10-22 16:20:00.567', 0.0, 'GIFT_CARD', 'CONFIRMED', 24.98, 24.98, 105, 5),
